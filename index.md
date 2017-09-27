@@ -11,7 +11,7 @@
 
 ## 2. 快速实践
 
-* [2.1 创建Wordpress应用](yong-hu-zhi-nan/kuai-su-shi-jian.md)
+* [2.1 创建Wordpress应用](chuang-jian-yi-ge-wordpress-ying-yong.md)
 * [2.2 创建mysql应用](yong-hu-zhi-nan/22-chuang-jian-yi-xie-chang-yong-fu-52a15d.md)
 
 ## 3. 用户指南
