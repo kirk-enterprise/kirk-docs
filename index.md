@@ -12,7 +12,7 @@
 ## 2. 快速实践
 
 * [2.1 创建Wordpress应用](chuang-jian-yi-ge-wordpress-ying-yong.md)
-* [2.2 创建mysql应用](yong-hu-zhi-nan/22-chuang-jian-yi-xie-chang-yong-fu-52a15d.md)
+* [2.2 创建mysql应用](chuang-jian-mysql-ying-yong.md)
 
 ## 3. 用户指南
 
