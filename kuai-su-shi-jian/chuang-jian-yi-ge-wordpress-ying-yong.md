@@ -36,7 +36,7 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 说明：如果该镜像在metadata中给出了相应的网络配置，镜像选择之后，将自动读取。
 ```
 
-![](https://odum9helk.qnssl.com/lvMXQfxroZz8Jw8b7pTQLbsSjZNM =400*400)
+![](/media/wordpress-db.gif)
 
 ```
 添加wordpress服务
@@ -51,7 +51,8 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 7）点击“确认”
 ```
 
-![](media/wordpress-web.gif)
+![](/media/wordpress-web.gif)
+
 **3.完成创建和应用访问**
 
 ```
