@@ -2,7 +2,7 @@
 
 ## 1. 产品简介
 
-* [1.1 产品介绍](README.md)
+* [1.1 产品介绍](chan-pin-jie-shao.md)
 * [1.2 基本概念](ji-ben-gai-nian.md)
 * [1.3 发布版本及功能](fa-bu-ban-ben-ji-gong-neng.md)
 * [1.4 计费说明](ji-fei-shuo-ming.md)
