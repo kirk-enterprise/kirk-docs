@@ -38,7 +38,7 @@
 >>操作：部署镜像
 
 
-![](/assets/公有.png)
+![](/media/yingyongguanli-gongyoujingxiang.png)
 
 
 #### 基本配置
@@ -86,7 +86,7 @@
 
 >><span style="color:red">注意：存储卷一旦创建成功，名称、大小无法修改</span>
 
-![](/assets/添加存储卷.jpeg)
+![](/media/yingyongguanli-tianjiacunchujuan.jpeg)
 
 #### 高级配置
 9）**环境变量**
@@ -111,11 +111,11 @@
 2. 点击想要查看应用的"应用名"，截图中所示"wordpress"
 3. 点击想要查看服务的"服务名"，截图中所示"web"
 4. 点击"日志"，这就进入了目标服务的日志页面
-![](/assets/应用.png)
+![](/media/yingyongguanli-yingyong.png)
 
-![](/assets/服务.png)
+![](/media/yingyongguanli-fuwu.png)
 
-![](/assets/日志.png)
+![](/media/yingyongguanli-rizhi.png)
 
 2）<span id="jump22">**如何按容器筛选日志？**</span>
 
@@ -123,7 +123,7 @@
 > 全部容器：同时显示该服务下所有容器的日志信息
 > 容器名称：只显示选中容器的日志信息
 
-![](/assets/容器名称.png)
+![](/media/yingyongguanli-rongqimingchen.png)
 
 3）<span id="jump23">**如何按时间筛选日志？**</span>
 
