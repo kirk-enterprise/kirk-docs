@@ -1,4 +1,4 @@
-#2.3 应用管理
+# 2.3 应用管理
 - [2.3.1 创建应用](#jump1)
 -
 
@@ -13,6 +13,6 @@
 4）点击**添加服务**，创建应用所需要的服务([详见2.4.1](/yong-hu-zhi-nan/fu-wu-guan-li.md "详见2.4.1"))
 
 5）点击**创建应用**，完成创建，并启动应用
-![](/assets/创建应用1.png)
+![](/media/yingyongguanli-chuangjianyingyong1.png)
 
-![](/assets/创建应用2.png)
+![](/media/yingyongguanli-chuangjianyingyong2.png)
