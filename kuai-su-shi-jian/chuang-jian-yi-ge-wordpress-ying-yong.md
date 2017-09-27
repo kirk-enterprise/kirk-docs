@@ -7,7 +7,7 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 **1. 添加应用**
 
 ```
-操作步骤如下：
+操作如下：
 1）点击左侧导航栏的"应用"，进入应用界面
 2）点击"添加应用"
 3）填写应用名"wordpress"
@@ -20,9 +20,9 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 
 **2. 添加服务和容器实例**
 
-```
 Wordpress应用需要添加两种服务:mysql和wordpress
-操作步骤如下：
+```
+操作如下：
 添加mysql服务
 1）填写服务名"db"
 2）选择服务类型"有状态"，使服务挂载存储卷
