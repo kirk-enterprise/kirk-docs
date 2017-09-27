@@ -52,6 +52,7 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 ```
 
 ![](media/wordpress-web.gif)
+
 **3.完成创建和应用访问**
 
 ```
