@@ -2,12 +2,12 @@
 
 ## 1. 产品简介
 
-* [1.1 产品介绍](chan-pin-gai-shu.md)
-* [1.2 基本概念](ji-ben-gai-nian.md)
-* [1.3 发布版本及功能](fa-bu-ban-ben-ji-gong-neng.md)
-* [1.4 计费说明](ji-fei-shuo-ming.md)
-* [1.5 七牛云用户服务协议](rong-qi-fu-wu-shi-yong-xie-yi.md)
-* [1.6 容器服务等级协议](rong-qi-fu-wu-deng-ji-xie-yi.md)
+* [1.1 产品介绍](chan-pin-jian-jie/chan-pin-jie-shao.md)
+* [1.2 基本概念](chan-pin-jian-jie/ji-ben-gai-nian.md)
+* [1.3 发布版本及功能](chan-pin-jian-jie/fa-bu-ban-ben-ji-gong-neng.md)
+* [1.4 计费说明](chan-pin-jian-jie/ji-fei-shuo-ming.md)
+* [1.5 七牛云用户服务协议](chan-pin-jian-jie/rong-qi-fu-wu-shi-yong-xie-yi.md)
+* [1.6 容器服务等级协议](chan-pin-jian-jie/rong-qi-fu-wu-deng-ji-xie-yi.md)
 
 ## 2. 快速实践
 
