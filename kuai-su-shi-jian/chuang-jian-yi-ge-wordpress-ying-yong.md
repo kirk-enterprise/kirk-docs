@@ -52,6 +52,7 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 ![](/media/wordpress-web.gif)
 
 **3.完成创建和应用访问**
+
 完成服务的创建后，启动应用。
 
 ```
