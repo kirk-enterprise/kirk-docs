@@ -51,7 +51,7 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 7）点击“确认”
 ```
 
-![](https://odum9helk.qnssl.com/lj1baXxgg2qMec8i7DAjo_H-Bad9)
+![](wordpress-web.gif)
 **3.完成创建和应用访问**
 
 ```
