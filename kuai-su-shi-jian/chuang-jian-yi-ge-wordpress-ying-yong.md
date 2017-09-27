@@ -4,13 +4,11 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 
 **1. 添加应用**
 
-```
 操作如下：
 1）点击左侧导航栏的"应用"，进入应用界面
 2）点击"添加应用"
 3）填写应用名"wordpress"
 4）添加服务
-```
 
 ![](/media/wordpress-tianjiayingyong1.png)
 
@@ -18,9 +16,7 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 
 **2. 添加服务和容器实例**
 
-添加mysql服务
-```
-操作如下：
+添加mysql服务，操作如下：
 1）填写服务名"db"
 2）选择服务类型"有状态"，使服务挂载存储卷
 3）点击"选择镜像"，选择镜像"mysql"，点击"部署"
@@ -31,13 +27,10 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 7）点击"确认"
 
 说明：如果该镜像在metadata中给出了相应的网络配置，镜像选择之后，将自动读取。
-```
 
 ![](/media/wordpress-db.gif)
 
-添加wordpress服务
-```
-操作如下
+添加wordpress服务，操作如下
 1）填写服务名"web"
 2）选择服务类型“无状态”，因为服务无需挂载存储卷
 3）点击“选择镜像”，选择镜像“wordpress”，点击“部署”
@@ -47,18 +40,14 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 变量名“WORDPRESS_DB_HOST”，变量值“wordpress-db:3306”，使服务内联mysql数据库；
 变量名"WORDPRESS_DB_PASSWORD"，变量值"root123"
 7）点击“确认”
-```
 
 ![](/media/wordpress-web.gif)
 
 **3.完成创建和应用访问**
 
-完成服务的创建后，启动应用。
-
-```
-操作如下
+完成服务的创建后，启动应用。操作如下
 1）点击"创建应用"
 2）通过web容器对外访问地址可以直接访问wordpress应用。
-```
+
 ![](/media/wordpress-duiwaifangwendizhi.png)
 
