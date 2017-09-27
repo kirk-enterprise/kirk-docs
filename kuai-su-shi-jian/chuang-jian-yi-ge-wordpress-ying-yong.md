@@ -14,9 +14,9 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 4）添加服务
 ```
 
-![](/assets/1.png)
+![](/assets/wordpress-tianjiayingyong1.png)
 
-![](/assets/2.png)
+![](/assets/wordpress-tianjiayingyong2.png)
 
 **2. 添加服务和容器实例**
 
@@ -59,5 +59,5 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 1）点击"创建应用"
 2）通过web容器对外访问地址可以直接访问wordpress应用。
 ```
-![](/assets/对外访问地址.png)
+![](/assets/wordpress-duiwaifangwendizhi.png)
 
