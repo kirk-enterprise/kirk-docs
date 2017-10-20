@@ -14,9 +14,9 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 4）添加服务
 ```
 
-![](/assets/wordpress-tianjiayingyong1.png)
+![](https://raw.githubusercontent.com/kirk-enterprise/kirk-docs/master/kuai-su-shi-jian/media/wordpress-tianjiayingyong1.png)
 
-![](/assets/wordpress-tianjiayingyong2.png)
+![](https://raw.githubusercontent.com/kirk-enterprise/kirk-docs/master/kuai-su-shi-jian/media/wordpress-tianjiayingyong2.png)
 
 **2. 添加服务和容器实例**
 
@@ -36,7 +36,7 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 说明：如果该镜像在metadata中给出了相应的网络配置，镜像选择之后，将自动读取。
 ```
 
-![](https://odum9helk.qnssl.com/lvMXQfxroZz8Jw8b7pTQLbsSjZNM)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-db.gif?raw=true)
 
 ```
 添加wordpress服务
@@ -51,7 +51,7 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 7）点击“确认”
 ```
 
-![](https://odum9helk.qnssl.com/lj1baXxgg2qMec8i7DAjo_H-Bad9)  
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-web.gif?raw=true)  
 **3.完成创建和应用访问**
 
 ```
@@ -59,6 +59,6 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 1）点击"创建应用"
 2）通过web容器对外访问地址可以直接访问wordpress应用。
 ```
-![](/assets/wordpress-duiwaifangwendizhi.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-duiwaifangwendizhi.png?raw=true)
 
 
