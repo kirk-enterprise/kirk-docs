@@ -6,6 +6,8 @@
 
 ![](/media/chan-pin-jie-gou.png)
 
+![](chan-pin-jie-gou.png)
+
 ***
 ### 产品优势
 
