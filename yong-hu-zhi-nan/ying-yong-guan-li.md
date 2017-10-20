@@ -10,11 +10,11 @@
 
 2）**添加服务** [详见3.3.1](fu-wu-guan-li.md "详见3.3.1")
     
-![](/assets/yingyongguanli-tianjiayingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-tianjiayingyong.png?raw=true)
 
 ***
 ##<span id="jump2">3.2.2 删除应用</span>
 
-![](https://odum9helk.qnssl.com/FrPxtwrzOsdANzDV9VU-MwdFYweh)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-shanchuyingyong.gif?raw=true)
 
 
