@@ -23,7 +23,7 @@
 ***
 ##<span id="jump2">3.5.2 删除存储卷</span>
 
-![](/assets/cunchuguanli-shanchucunchujuan.gif)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/cunchuguanli-shanchucunchujuan.gif?raw=true)
 
 ***
 ##<span id="jump3">3.5.3 挂载服务/服务移除</span>
