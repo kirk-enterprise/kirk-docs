@@ -34,21 +34,21 @@
 
 >注意：只有具备管理员权限的账户才能上传镜像到公有镜像仓库，普通用户可以上传到私有镜像仓库
 
-![](/assets/jingxiangzhongxin-shangchuanjingxiang.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/jingxiangzhongxin-shangchuanjingxiang.png?raw=true)
 
 ***
 ##<span id="jump3">3.6.3 删除镜像</span>
 
 删除镜像后，该镜像下所有版本将被删除。
 
-![](https://odum9helk.qnssl.com/Fj0CUKseXCC8ttCzPE1QAwpGKLIT)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/jingxiangzhongxin-shanchujingxiang.gif?raw=true)
 
 ***
 ##<span id="jump4">3.6.4 删除镜像版本</span>
 
 支持删除镜像下的某个版本。
 
-![](https://odum9helk.qnssl.com/FskvYnFp2B0v_nkck7pqxNe6wDyJ)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/jingxianghzongxin-shanchujingxiangbanben.gif?raw=true)
 
 ***
 ##<span id="jump5">3.6.5 部署镜像</span>
