@@ -21,7 +21,7 @@
 
 ><span style="color:red">注意：容器重新部署会导致该容器日志和监控重置</span>
 
-![](https://odum9helk.qnssl.com/FiSYQw4SUooUeQvCd3JBDLgKiPDY)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rongqiguanli-chongxinbushu.gif?raw=true)
 
 ***
 ##<span id="jump4">3.4.4 远程终端</span>
