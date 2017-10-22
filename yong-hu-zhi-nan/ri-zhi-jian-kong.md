@@ -30,9 +30,9 @@
     2. 点击想要查看应用的"应用名"，截图中所示"wordpress"
     3. 点击"日志"，进入目标应用的日志页面
 
-![](/assets/yingyongguanli-yingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-yingyong.png?raw=true)
     
-![](/assets/rizhihejiankong-yingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rizhihejiankong-yingyong.png?raw=true)
         
 2）<span id="jump12">**如何进入服务日志页面？**</span>
 
@@ -42,11 +42,11 @@
     3. 点击想要查看服务的"服务名"，截图中所示"web"
     4. 点击"日志"，进入目标服务的日志页面
     
-![](/assets/yingyongguanli-yingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-yingyong.png?raw=true)
 
-![](/assets/yingyongguanli-fuwu.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-fuwu.png?raw=true)
 
-![](/assets/yingyongguanli-rizhi.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-rizhi.png?raw=true)
 
 3）<span id="jump13">**如何进入容器日志页面？**</span>
     
@@ -55,9 +55,9 @@
     2. 点击想要查看容器的"容器名称"，截图中所示"wordpress-db-3871151804-fkv0r"
     3. 点击"日志"，进入目标容器的日志页面
     
-![](/assets/rizhihejiankong-rongqi1.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rizhihejiankong-rongqi1.png?raw=true)
 
-![](/assets/jiankongherizhi-rongqi3.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/jiankongherizhi-rongqi3.png?raw=true)
 
 ***
 ##<span id="jump2">3.7.2 日志筛选</span>
@@ -69,7 +69,7 @@
 
 > 容器名称：只显示选中容器的日志信息
 
-![](/assets/yingyongguanli-rongqimingchen.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-rongqimingchen.png?raw=true)
 
 2）<span id="jump23">**如何按时间筛选日志？**</span>
 
@@ -111,9 +111,9 @@
     2. 点击想要查看应用的"应用名"，截图中所示"wordpress"
     3. 点击"监控"，进入目标应用的监控页面
     
-![](/assets/yingyongguanli-yingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-yingyong.png?raw=true)
 
-![](/assets/rizhihejiankong-yingyongjiankong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rizhihejiankong-yingyongjiankong.png?raw=true)
 
 2）<span id="jump32">**如何进入服务监控页面？**</span>
 
@@ -123,11 +123,11 @@
     3. 点击想要查看服务的"服务名"，截图中所示"web"
     4. 点击"监控"，进入目标服务的监控页面
 
-![](/assets/yingyongguanli-yingyong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-yingyong.png?raw=true)
 
-![](/assets/yingyongguanli-fuwu.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-fuwu.png?raw=true)
 
-![](/assets/fuwuguanli-jiankong2.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-jiankong2.png?raw=true)
 
 3）<span id="jump33">**如何进入容器监控页面？**</span>
 
@@ -136,9 +136,9 @@
     2. 点击想要查看容器的"容器名称"，截图中所示"wordpress-db-3871151804-fkv0r"
     3. 点击"监控"，进入目标容器的监控页面
     
-![](/assets/rizhihejiankong-rongqi1.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rizhihejiankong-rongqi1.png?raw=true)
 
-![](/assets/rizhihejiankong-rongqijiankong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/rizhihejiankong-rongqijiankong.png?raw=true)
 
 4）<span id="jump34">**如何查看历史数据？**</span>
 
@@ -151,5 +151,5 @@
 
 > 自定义：可以自由选择查看监控的时间段。
 
-![](/assets/fuwuguanli-jiankong.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-jiankong.png?raw=true)
 
