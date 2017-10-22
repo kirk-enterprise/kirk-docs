@@ -8,13 +8,13 @@
 
 **配置集** 能够统一管理相关配置项，例如配置集可以为服务名，配置项为服务相关的环境变量值。
 
-![](https://odum9helk.qnssl.com/FgCCmipAno-Js2O74CR2ioN6WL2E)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/peizhizhongxin-peizhiji.gif?raw=true)
 
 ##<span id="jump2">3.8.2 添加/删除 配置项</span>
 
 **配置项** 可以在多个服务之间进行复用，非常便于统一设置/修改，也避免了手动输入带来的出错风险。
 
-![](https://odum9helk.qnssl.com/FoWs7D0JZC30BMiGMaP4oyWZrSn7)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/peizhizhongxin-peizhixiang.gif?raw=true)
 
 ##<span id="jump3">3.8.3 使用配置项</span>
 
@@ -26,7 +26,7 @@
     2）选择对应的配置集，如图"wordpress-db"
     3）选择对应的配置项，如图"db-password"
 
-![](/assets/peizhizhongxin-tianjiapeizhixiang.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/peizhizhongxin-tianjiapeizhixiang.png?raw=true)
 
 
 
