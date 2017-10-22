@@ -7,7 +7,7 @@
 - [3.3.4 服务伸缩](#jump4)
 - [3.3.5 服务升级](#jump5)
 - [3.3.6 服务回滚](#jump6)
-- [3.3.7 日志 & 监控[详见3.7]](/yong-hu-zhi-nan/jian-63a726-ri-zhi.md "日志 & 监控[详见3.7]")
+- [3.3.7 日志 & 监控 (详见3.7)](ri-zhi-jian-kong.md "日志 & 监控(详见3.7)")
 
 ***
 ##<span id="jump1">3.3.1 添加服务</span>
@@ -43,7 +43,7 @@
 >>操作：部署镜像
 
 
-![](/assets/yingyongguanli-gongyoujingxiang.png)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-gongyoujingxiang.png?raw=true)
 
 
 #### <span id="jump11">基本配置</span>
@@ -92,7 +92,7 @@
 
 >><span style="color:red">注意：存储卷一旦创建成功，名称、大小无法修改</span>
 
-![](/assets/yingyongguanli-tianjiacunchujuan.jpeg)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-tianjiacunchujuan.jpeg?raw=true)
 
 #### <span id="jump12">高级配置</span>
 
@@ -111,12 +111,12 @@
 ***
 ##<span id="jump2">3.3.2 删除服务</span>
 
-![](https://odum9helk.qnssl.com/FjhJEDAXbMP4jPzuYmTdqx769O00)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-shanchufuwu.gif?raw=true)
 
 ***
 ##<span id="jump3">3.3.3 启动/停止服务</span>
 
-![](https://odum9helk.qnssl.com/FjtYPb7LpVO0U-yEMbaTviJkPmIA)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-qidonghetingzhi.gif?raw=true)
 
 ***
 ##<span id="jump4">3.3.4 服务伸缩</span>
@@ -124,7 +124,7 @@
 服务伸缩允许用户能够手动调整无状态服务的容器实例数，例如将wordpress的web服务2个容器实例扩容为4个.
 ><span style="color:red">注意：有状态服务不支持弹性伸缩。</span>
 
-![](https://odum9helk.qnssl.com/Fnfa8vz6omGIrC7OPoE5g0lY2ioe)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwushensuo.gif?raw=true)
 
 ***
 ##<span id="jump5">3.3.5 服务升级</span>
@@ -141,7 +141,7 @@
 
 >><span style="color:red">注意：服务升级会导致日志和监控重置</span>
 
-![](https://odum9helk.qnssl.com/FuF8kUjtUOlyzy1hldDCfTvtEBaA)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwushengji.gif?raw=true)
 
 ***
 ##<span id="jump6">3.3.6 服务回滚</span>
@@ -150,7 +150,7 @@
 
 ><span style="color:red">注意：服务回滚会导致日志和监控重置</span>
 
-![](https://odum9helk.qnssl.com/FgXSQpqRAHEDXpKhhuL4qd7hhqjV)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwuhuigun.gif?raw=true)
 
 
 
