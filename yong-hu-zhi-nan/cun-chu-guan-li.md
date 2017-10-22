@@ -39,4 +39,4 @@
 
 >>挂载路径：存储卷挂载到服务的内部路径，服务通过该路径读取或写入存储卷
 
-![](https://odum9helk.qnssl.com/FioZeO4lEExDlTVbmtxYU8E9Ridm)
+![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/cunchuguanli-guazaicunchujuan.gif?raw=true)
