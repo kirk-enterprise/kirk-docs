@@ -2985,11 +2985,12 @@ Compiler.prototype.subSidebar = function subSidebar (level) {
     var cacheTree = ref.cacheTree;
     var toc = ref.toc;
 
-  toc[0] && toc[0].ignoreAllSubs && toc.splice(0, toc.length);
+  toc[0] && toc[0].ignoreAllSubs && toc.splice(0);
   toc[0] && toc[0].level === 1 && toc.shift();
-  toc.forEach(function (node, i) {
-    node.ignoreSubHeading && toc.splice(i, 1);
-  });
+
+  for (var i = 0; i < toc.length; i++) {
+    toc[i].ignoreSubHeading && toc.splice(i, 1) && i--;
+  }
 
   var tree$$1 = cacheTree[currentPath] || genTree(toc, level);
 
