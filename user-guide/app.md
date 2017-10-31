@@ -9,12 +9,10 @@
 >要求：长度为2-32, 可以是小写字母或数字, 首字符必须是小写字母
 
 2）**添加服务** [详见3.3.1](user-guide/service.md "详见3.3.1")
-    
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-tianjiayingyong.png?raw=true)
+
+![添加应用](_figures/user-guide/app-create.png)
 
 ***
 ## <span id="jump2">3.2.2 删除应用</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-shanchuyingyong.gif?raw=true)
-
-
+![删除应用](_figures/user-guide/app-delete.gif)
