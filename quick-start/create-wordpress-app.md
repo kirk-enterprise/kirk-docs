@@ -1,4 +1,4 @@
-# 创建一个Wordpress应用
+# 创建一个 Wordpress 应用
 
 Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务。整个应用通过负载均衡的方式暴露到集群外部。
 
@@ -14,13 +14,12 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 4）添加服务
 ```
 
-![](https://raw.githubusercontent.com/kirk-enterprise/kirk-docs/master/kuai-su-shi-jian/media/wordpress-tianjiayingyong1.png)
+![](_figures/quick-start/wordpress-create-1.png)
 
-![](https://raw.githubusercontent.com/kirk-enterprise/kirk-docs/master/kuai-su-shi-jian/media/wordpress-tianjiayingyong2.png)
+![](_figures/quick-start/wordpress-create-2.png)
 
 **2. 添加服务和容器实例**
 
-```
 Wordpress应用需要添加两种服务:mysql和wordpress
 操作步骤如下：
 添加mysql服务
@@ -34,11 +33,9 @@ Wordpress应用需要添加两种服务:mysql和wordpress
 7）点击"确认"   
 
 说明：如果该镜像在metadata中给出了相应的网络配置，镜像选择之后，将自动读取。
-```
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-db.gif?raw=true)
+![](_figures/quick-start/wordpress-db.gif)
 
-```
 添加wordpress服务
 1）填写服务名"web"
 2）选择服务类型“无状态”，因为服务无需挂载存储卷
@@ -49,16 +46,12 @@ Wordpress应用需要添加两种服务:mysql和wordpress
    变量名“WORDPRESS_DB_HOST”，变量值“wordpress-db:3306”，使服务内联mysql数据库；
    变量名"WORDPRESS_DB_PASSWORD"，变量值"root123"
 7）点击“确认”
-```
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-web.gif?raw=true)  
+![](_figures/quick-start/wordpress-web.gif)
 **3.完成创建和应用访问**
 
-```
 完成服务的创建后，启动应用。
 1）点击"创建应用"
 2）通过web容器对外访问地址可以直接访问wordpress应用。
-```
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/kuai-su-shi-jian/media/wordpress-duiwaifangwendizhi.png?raw=true)
 
-
+![集群外访问](_figures/quick-start/wordpress-external-addr.png)

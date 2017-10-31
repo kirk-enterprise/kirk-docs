@@ -6,7 +6,7 @@
 
 ## 产品架构
 
-![](_figures/introduction/product-architecture.png)
+![产品架构](_figures/introduction/product-architecture.png)
 
 ## 产品优势
 

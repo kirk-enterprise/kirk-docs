@@ -31,7 +31,7 @@
 >>私有镜像：需要鉴权访问，一个命名空间下的私有镜像对该命名空间下的所有用户可见。
 
 　
->**镜像信息**                     
+>**镜像信息**
 >>镜像：namespace/镜像名称
 
 >>最新版本：最新更新上传的版本号
@@ -43,12 +43,12 @@
 >>操作：部署镜像
 
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-gongyoujingxiang.png?raw=true)
+![](_figures/user-guide/app-public-images.png)
 
 
 #### <span id="jump11">基本配置</span>
 
-5）**容器规格**：提供四种规格                     
+5）**容器规格**：提供四种规格
 >1U1G：单个容器配1个CPU和1G内存资源
 
 >1U2G：单个容器配1个CPU和2G内存资源
@@ -67,7 +67,7 @@
 >>外部访问：开启 **集群外访问** 开关，平台将自动分配一个随机的外部访问域名
 
 　
->**容器端口**                     
+>**容器端口**
 >>metadata自动配置：如果该镜像在metadata中约束了端口号，镜像选定后，平台将自动配置
 
 　
@@ -92,7 +92,7 @@
 
 >><span style="color:red">注意：存储卷一旦创建成功，名称、大小无法修改</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/yingyongguanli-tianjiacunchujuan.jpeg?raw=true)
+![](_figures/user-guide/app-storage.jpeg)
 
 #### <span id="jump12">高级配置</span>
 
@@ -111,12 +111,12 @@
 ***
 ##<span id="jump2">3.3.2 删除服务</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-shanchufuwu.gif?raw=true)
+![](_figures/user-guide/service-delete.gif)
 
 ***
 ##<span id="jump3">3.3.3 启动/停止服务</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-qidonghetingzhi.gif?raw=true)
+![](_figures/user-guide/service-start-stop.gif)
 
 ***
 ##<span id="jump4">3.3.4 服务伸缩</span>
@@ -124,7 +124,7 @@
 服务伸缩允许用户能够手动调整无状态服务的容器实例数，例如将wordpress的web服务2个容器实例扩容为4个.
 ><span style="color:red">注意：有状态服务不支持弹性伸缩。</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwushensuo.gif?raw=true)
+![](_figures/user-guide/service-scale.gif)
 
 ***
 ##<span id="jump5">3.3.5 服务升级</span>
@@ -141,7 +141,7 @@
 
 >><span style="color:red">注意：服务升级会导致日志和监控重置</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwushengji.gif?raw=true)
+![](_figures/user-guide/service-upgrade.gif)
 
 ***
 ##<span id="jump6">3.3.6 服务回滚</span>
@@ -150,7 +150,7 @@
 
 ><span style="color:red">注意：服务回滚会导致日志和监控重置</span>
 
-![](https://github.com/kirk-enterprise/kirk-docs/blob/master/yong-hu-zhi-nan/media/fuwuguanli-fuwuhuigun.gif?raw=true)
+![](_figures/user-guide/service-rollback.gif)
 
 
 
