@@ -13,3 +13,12 @@ body.close main button.sidebar-toggle {
 /* Content */
 
 /* Markdown */
+
+/* Plugins */
+/* FIX: hide navbar when zoom-image open */
+.medium-zoom-overlay {
+  z-index: 2;
+}
+img.medium-zoom-image--open {
+  z-index: 2;
+}
