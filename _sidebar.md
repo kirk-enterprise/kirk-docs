@@ -19,8 +19,7 @@
   * [应用市场](user-guide/app-store.md)
   * [监控&日志](user-guide/log-and-monitor.md)
 * API 文档
-  * [用户接口](api-doc/user.md)
-  * [项目接口](api-doc/project.md)
+  * [账户管理](api-doc/account.md)
   * [服务接口](api-doc/service.md)
   * [应用负载均衡接口](api-doc/alb.md)
   * [云盘接口](api-doc/volume.md)
