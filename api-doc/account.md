@@ -1,4 +1,4 @@
-# ke-control account api
+# 账户管理api
 
 ## 获取用户token
 ### 请求
@@ -20,21 +20,25 @@
 ### 返回体
 名称 | 描述
 ---- | ----
-issued_at  | 用户登陆时间。
-expires_at | 用户失效时间。
-id  | 用户id。
-name  | 用户名。
-tokenid | 用户unscoped token。
+token.issued_at  | 用户登陆时间。
+token.expires_at | 用户失效时间。
+token.tokenid | 用户token。
+user.id  | 用户id。
+user.name  | 用户名。
 
 ### 示例
 ```
 $ curl -X POST "localhost:8701/v1/token/user" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
 {
-    "expires_at": "2017-10-26T12:44:23.000000Z",
-    "issued_at": "2017-10-23T12:44:23.000000Z",
-    "id": "b8bbdaeb00a648e280366b752e3cd593",
-    "name": "1810615771",
-    "tokenid": "gAAAAABZ7eQnQG8iRcri2F55l4nXQvCCKeqQ9Jzf2gIsPiJeoMeJL5aRUj93Z2tjvfmZaR3RGS4ELVMDZ5qSP804BRqLdjbVPQ6VNZO1JLcO4D-F-i_3De-GCql2fOWet4Sy2jHVRRA56OQhsch0_YEGF5278Bstvw"
+    "token" : {
+        "expires_at": "2017-10-26T12:44:23.000000Z",
+        "issued_at": "2017-10-23T12:44:23.000000Z",
+        "id": "gAAAAABZ7eQnQG8iRcri2F55l4nXQvCCKeqQ9Jzf2gIsPiJeoMeJL5aRUj93Z2tjvfmZaR3RGS4ELVMDZ5qSP804BRqLdjbVPQ6VNZO1JLcO4D-F-i_3De-GCql2fOWet4Sy2jHVRRA56OQhsch0_YEGF5278Bstvw"
+    },
+    "user" : {
+        "id": "b8bbdaeb00a648e280366b752e3cd593",
+        "name": "1810615771"
+    }
 }
 ```
 
@@ -59,11 +63,11 @@ $ curl -X POST "localhost:8701/v1/token/user" -d '{"name":"1508722467@fake.qiniu
 ### 返回体
 名称 | 描述
 ---- | ----
-issued_at  | 获取时间。
-expires_at | 失效时间。
+token.issued_at  | 用户登陆时间。
+token.expires_at | 用户失效时间。
+token.tokenid | 项目 token。
 user.id  | 用户id。
 user.name  | 用户名。
-tokenid | 项目token。
 project | 项目名
 role | 权限名
 
@@ -71,15 +75,17 @@ role | 权限名
 ```
 $ curl "localhost:8701/v1/token/project?name=1508809392" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 {
-    "expires_at": "2017-10-27T01:43:48.000000Z",
-    "issued_at": "2017-10-24T03:47:53.000000Z",
     "project": "1508809392",
     "roles": ["admin"],
+    "token": {
+        "expires_at": "2017-10-27T01:43:48.000000Z",
+        "issued_at": "2017-10-24T03:47:53.000000Z",
+        "id": "gAAAAABZ7rfpauAwodMuUaO7yRU8lx0cKjKA5almPBpZMU9UW9YrBxaWzNTENceM4p9exyw0JnOUcLIXLobQTij15pY6JLeZAckQ6y3pVC6SGYti1PGPBQtIm2ab25MYHxtVp1AN67ZVVgO5mZtAZ6XTyAm9ooFcTFGMq7_jEWXZCuA2BfEEqG0n22YGtg3H5hMOTZm0_U5i"
+    }
     "user": {
         "id": "bdbf8159106a42dc9ee34e7ca2bf4c34",
         "name": "1810615782"
-    },
-    "tokenid": "gAAAAABZ7rfpauAwodMuUaO7yRU8lx0cKjKA5almPBpZMU9UW9YrBxaWzNTENceM4p9exyw0JnOUcLIXLobQTij15pY6JLeZAckQ6y3pVC6SGYti1PGPBQtIm2ab25MYHxtVp1AN67ZVVgO5mZtAZ6XTyAm9ooFcTFGMq7_jEWXZCuA2BfEEqG0n22YGtg3H5hMOTZm0_U5i"
+    }
 }
 ```
 
@@ -106,7 +112,7 @@ $ curl -X DELETE "localhost:8701/v1/token" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-
 
 ## 获取用户信息
 ### 请求
-`GET /userinfo/<userid>`
+`GET /users/<userid>`
 
 ### 参数说明
 | 名称      |  类型   |  位置    | 必选 |  描述|
@@ -305,14 +311,23 @@ curl -X DELETE "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc
 403  | （错误）访问失败，访问违反policy。
 404  | （错误）不正确的访问路径，请参考开放 API 文档。
 
+### 返回体
+名称 | 描述
+---- | ----
+[i].name  | 第i个用户的名字
+[i].id | 第i个用户的id
+
+### 示例
 ```
 curl -X GET "localhost:8701/v1/projects/u-1810-default/users" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 [
     {
-        "id": "17dc55867da74bf49ff74187c47c8203"
+        "id": "17dc55867da74bf49ff74187c47c8203",
+        "name" : "test@qiniu.com"
     },
     {
-        "id": "526d8563a67c4f0b89b99b69425f9a7d"
+        "id": "526d8563a67c4f0b89b99b69425f9a7d",
+        "name": "last@qiniu.com"
     }
 ]
 ```
@@ -335,6 +350,13 @@ curl -X GET "localhost:8701/v1/projects/u-1810-default/users" -H "X-Auth-Token:g
 403  | （错误）访问失败，访问违反policy。
 404  | （错误）不正确的访问路径，请参考开放 API 文档。
 
+### 返回体
+名称 | 描述
+---- | ----
+name  | 项目名字
+description | 项目描述
+
+### 示例
 ```
 curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 {
@@ -362,6 +384,13 @@ curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAAB
 403  | （错误）访问失败，访问违反policy。
 404  | （错误）不正确的访问路径，请参考开放 API 文档。
 
+### 返回体
+名称 | 描述
+---- | ----
+name  | 项目名字
+description | 项目描述
+
+### 示例
 ```
 curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S" -d '{"description":"new info"}'
 {
@@ -387,6 +416,13 @@ curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAAB
 403  | （错误）访问失败，访问违反policy。
 404  | （错误）不正确的访问路径，请参考开放 API 文档。
 
+### 返回体
+名称 | 描述
+---- | ----
+[i].id  | 第i个region的id
+[i].description | 第i个region的描述
+
+### 示例
 ```
 curl -X GET "localhost:8701/v1/regions" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 [
