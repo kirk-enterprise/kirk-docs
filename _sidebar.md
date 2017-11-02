@@ -7,7 +7,6 @@
   * [容器服务等级协议](introduction/kirk-sla.md)
 * 快速实践
   * [创建 Wordpress 应用](quick-start/create-wordpress-app.md)
-  * [创建 Mysql 应用](quick-start/create-mysql-app.md)
 * 用户指南
   * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
