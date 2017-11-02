@@ -140,7 +140,7 @@
 
 ![](_figures/user-guide/service-rollback.gif)
 
-
+***
 ## 3.3.7 日志 & 监控
 七牛容器云提供服务级别的日志和监控。[详见3.7](user-guide/log-and-monitor.md)
 
