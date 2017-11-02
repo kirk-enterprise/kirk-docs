@@ -2,7 +2,7 @@
 
 ## 获取用户token
 ### 请求
-`POST /v1/token/user`
+`POST /v1/users/token`
 
 ### 参数说明
 | 名称      |  类型   |  位置    | 必选 |  描述|
@@ -28,7 +28,7 @@ user.name  | 用户名。
 
 ### 示例
 ```
-$ curl -X POST "localhost:8701/v1/token/user" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
+$ curl -X POST "localhost:8701/v1/users/token" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
 {
     "token" : {
         "expires_at": "2017-10-26T12:44:23.000000Z",
@@ -44,12 +44,12 @@ $ curl -X POST "localhost:8701/v1/token/user" -d '{"name":"1508722467@fake.qiniu
 
 ## 获取项目token
 ### 请求
-`GET /v1/token/project`
+`GET /v1/projects/<project-name>/token`
 
 ### 参数说明
 | 名称      |  类型   |  位置    | 必选 |  描述|
 |:--------- |:------ |:------ |:---- |:----  |
-|name|`string`|查询参数|是| 项目名| 
+|project-name|`string`|路径|是| 项目名| 
 |X-Auth-Token|`string`|请求头|是| 用户token| 
 
 ### 返回码
@@ -73,7 +73,7 @@ role | 权限名
 
 ### 示例
 ```
-$ curl "localhost:8701/v1/token/project?name=1508809392" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl "localhost:8701/v1/projects/1508809392/token" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 {
     "project": "1508809392",
     "roles": ["admin"],
