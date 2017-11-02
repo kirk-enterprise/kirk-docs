@@ -12,6 +12,7 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 
 ![](_figures/quick-start/wordpress-create-2.png)
 
+***
 ## 2. 添加服务和容器实例
 ### 2.1 添加mysql服务
 **操作如下：**
@@ -44,6 +45,7 @@ Wordpress应用包含两种服务：mysql数据库服务和wordpress web服务�
 
 ![](_figures/quick-start/wordpress-web.gif)
 
+***
 ## 3.完成创建和应用访问
 **操作如下：**
 
