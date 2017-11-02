@@ -14,9 +14,8 @@
   * [容器管理](user-guide/container.md)
   * [存储管理](user-guide/storage.md)
   * [镜像管理](user-guide/image.md)
-  * [主机管理](user-guide/node.md)
-  * [应用市场](user-guide/app-store.md)
-  * [监控&日志](user-guide/log-and-monitor.md)
+  * [监控 & 日志](user-guide/log-and-monitor.md)
+  * [配置中心](user-guide/configmap.md)
 * API 文档
   * [账户管理](api-doc/account.md)
   * [服务接口](api-doc/service.md)
