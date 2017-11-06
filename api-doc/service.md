@@ -16,7 +16,7 @@
 | 名称           | 类型       | 长度上限 | 描述                               |
 | :----------- | :------- | :--- | :------------------------------- |
 | name  | `string` | 30   | 应用名字，项目内唯一，全小写，字母打头，只允许数字和字母。       |
-| microservices  | `[]MicroServices` | N/A   | 该应用拥有的微服务列表。       |
+| microservices  | `array` | N/A   | 该应用拥有的微服务列表。       |
 | creationTime | `string` | 128  | 创建时间，RFC3339 格式。                  |
 
 ## 服务描述
@@ -57,7 +57,7 @@
 ## 获取集群可用容器资源规格
 
 ### 请求
-`GET` `/regions/<regionName>/resource-specs`
+`GET` `/regions/<regionName>/v1/resourcespecs`
 ### 返回
 ```json
 [

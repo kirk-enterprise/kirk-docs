@@ -23,7 +23,7 @@
 
 ### 请求
 
-`GET` `/regions/<regionName>/storagetypes`
+`GET` `/regions/<regionName>/v1/storagetypes`
 
 ### 返回
 
