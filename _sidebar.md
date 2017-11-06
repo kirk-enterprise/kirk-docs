@@ -22,8 +22,8 @@
   * [应用负载均衡接口](api-doc/alb.md)
   * [云盘接口](api-doc/volume.md)
 * 最佳实践
-  * [创建 Wordpress 应用](quick-start/create-wordpress-app.md)
+  * [创建 Wordpress 应用](best-practise/create-wordpress-app.md)
 * Q & A
-  * [如何实现服务之间的访问？](q-and-a/about-service.md)
+  * [服务相关](q-and-a/about-service.md)
   * [如何使用配置集？](q-and-a/)
   * [如何修改服务的默认网络配置？](q-and-a/)
