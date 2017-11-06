@@ -2,7 +2,7 @@
 
 ## 获取用户token
 ### 请求
-`POST /v1/users/token`
+`POST /v1/usertoken`
 
 ### 参数说明
 | 名称      |  类型   |  位置    | 必选 |  描述|
@@ -28,7 +28,7 @@ user.name  | 用户名。
 
 ### 示例
 ```
-$ curl -X POST "localhost:8701/v1/users/token" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
+$ curl -X POST "localhost:8701/v1/usertoken" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
 {
     "token" : {
         "expires_at": "2017-10-26T12:44:23.000000Z",
@@ -87,27 +87,6 @@ $ curl "localhost:8701/v1/projects/1508809392/token" -H "X-Auth-Token: gAAAAABZ7
         "name": "1810615782"
     }
 }
-```
-
-## 回收token
-### 请求
-`DELETE /v1/token`
-
-### 参数说明
-| 名称      |  类型   |  位置    | 必选 |  描述|
-|:--------- |:------ |:------ |:---- |:----  |
-|X-Auth-Token|`string`|请求头|是| 用户token|
-
-### 返回码
-代码 | 描述
----- | ----
-204  | 正常返回。
-401  | （错误）请求未授权。
-404  | （错误）不正确的访问路径，请参考开放 API 文档。
-
-### 示例
-```
-$ curl -X DELETE "localhost:8701/v1/token" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 ```
 
 ## 获取用户信息
@@ -170,6 +149,7 @@ $ curl -X GET "localhost:8701/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "
 ---- | ----
 [i].name  | 第i个项目的名字
 [i].description | 第i个项目的描述
+[i].type | 第i个项目的类型
 
 ### 示例
 ```
@@ -177,7 +157,8 @@ $ curl -X GET "localhost:8701/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects
 [
     {
         "description": "for test",
-        "name": "1810615782"
+        "name": "1810615782",
+        "type" : "personal"
     }
 ]
 ```
@@ -355,13 +336,15 @@ curl -X GET "localhost:8701/v1/projects/u-1810-default/users" -H "X-Auth-Token:g
 ---- | ----
 name  | 项目名字
 description | 项目描述
+type | 项目类型
 
 ### 示例
 ```
 curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 {
     "description" : "for test",
-    "name" : "u-1810-default"
+    "name" : "u-1810-default",
+    "type" : "personal"
 }
 ```
 
