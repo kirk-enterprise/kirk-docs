@@ -19,6 +19,8 @@
 * API 文档
   * [账户管理](api-doc/account.md)
   * [服务接口](api-doc/service.md)
+  * [存储接口](api-doc/volume.md)
+  * [配置接口](api-doc/configmap.md)
   * [应用负载均衡接口](api-doc/alb.md)
   * [云盘接口](api-doc/volume.md)
 * 最佳实践
