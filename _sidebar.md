@@ -5,8 +5,8 @@
   * [计费说明](introduction/prices.md)
   * [七牛云用户服务协议](introduction/conditions-of-use.md)
   * [容器服务等级协议](introduction/kirk-sla.md)
-* 快速实践
-  * [创建 Wordpress 应用](quick-start/create-wordpress-app.md)
+* 快速开始
+  * [创建一个应用](quick-start/create-app.md)
 * 用户指南
   * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
@@ -21,12 +21,9 @@
   * [服务接口](api-doc/service.md)
   * [应用负载均衡接口](api-doc/alb.md)
   * [云盘接口](api-doc/volume.md)
-* SDK 文档
 * 最佳实践
-  * 日请求量百亿次的多媒体转码业务
-  * Spark大数据平台实现
-  * 机器学习训练业务
+  * [创建 Wordpress 应用](quick-start/create-wordpress-app.md)
 * Q & A
-  * [如何实现服务之间的访问？](q-and-a/access-between-services.md)
+  * [如何实现服务之间的访问？](q-and-a/about-service.md)
   * [如何使用配置集？](q-and-a/)
   * [如何修改服务的默认网络配置？](q-and-a/)
