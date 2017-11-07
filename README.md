@@ -2,10 +2,10 @@
 
 ![logo](_media/logo-blue.png)
 
-# 七牛容器云文档 <small>2.0</small>
+# 七牛容器云
 
-> 七牛容器云产品文档、API 文档、SDK 文档
+> 新时代运维从这里开始
 
-- 简单·可信赖
+- 文档站1.0
 
-[开始使用](introduction/product-introduction.md)
+[了解详情](introduction/product-introduction.md)
