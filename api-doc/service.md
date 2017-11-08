@@ -1,4 +1,4 @@
-# 微服务 API(对外）
+# 微服务 API（对外）
 
 微服务 **MicroService** 包含两种类型的服务，一种是有状态型的，可以挂载磁盘，但只能有一个实例；另一种是无状态型的，不能挂载磁盘，可以有多个实例。
 
@@ -24,6 +24,8 @@
 | 名称           | 类型       | 长度上限 | 描述                               |
 | :----------- | :------- | :--- | :------------------------------- |
 | name  | `string` | 30   | 服务名字，应用内唯一，全小写，字母打头，可允许数字和符号 `-`。       |
+| appName  | `string` | 30   | 服务所属应用名称，在获取服务信息时显示，新增服务等操作时不必填写 `-`。       |
+| projectName  | `string` | 30   | 服务所属项目名称，在获取服务信息时显示，新增服务等操作时不必填写 `-`。       |
 | type  | `string` | 32   | 服务类型，可为有状态服务：`stateful`，或无状态服务：`stateless`。       |
 | serviceStatus  | `string` | 32   | 服务状态，可为启动（或创建）中：`creating`，或正常：`ok`，或出错：`error`。       |
 | resourceSpec  | `string` | 16   | 资源规格，具体的规格名称见前面定义。       |
@@ -179,6 +181,8 @@
 ```json
 {
     "name": "service0",
+    "appName": "app0",
+    "projectName": "project",
     "type": "stateful",
     "resourceSpec": "1U1G",
     "instanceNumber": 1,
@@ -273,6 +277,8 @@
 ```json
 {
     "name": "service0",
+    "appName": "app0",
+    "projectName": "project",
     "type": "stateless",
     "resourceSpec": "1U1G",
     "instanceNumber": 1,
@@ -327,6 +333,8 @@
 ```json
 {
     "name": "service0",
+    "appName": "app0",
+    "projectName": "project",
     ...
 }
 ```
@@ -472,6 +480,60 @@
 | 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
 | 404     | AppNotFound        | 指定的应用不存在。                     |
 | 409     | ServiceExists      | 同名服务已经存在。                     |
+
+## 更新服务网络配置
+
+### 请求
+
+`PUT` `/regions/<regionName>/v1/projects/<projectName>/apps/<appName>/microservices/<serviceName>/ports`
+
+```json
+{
+  "ports": [
+    {
+      "port": 8080,
+      "protocol": "UDP"
+    },
+    {
+      "port": 80,
+      "protocol": "TCP"
+    }
+  ]
+}
+```
+
+### 返回
+
+更新后的服务信息。
+
+```json
+{
+    "name": "service0",
+    
+    ...
+
+    "ports": [
+        {
+          "port": 8080,
+          "protocol": "UDP"
+        },
+        {
+          "port": 80,
+          "protocol": "TCP"
+        }
+    ]
+    ...
+}
+```
+
+### 错误代码
+
+| http 代码 | 错误码                | 说明                            |
+| :------ | :----------------- | :---------------------------- |
+| 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
+| 404     | AppNotFound        | 指定的应用不存在。                     |
+| 409     | ServiceExists      | 同名服务已经存在。                     |
+
 
 ## 列取服务的所有历史版本
 

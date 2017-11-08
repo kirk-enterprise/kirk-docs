@@ -1,4 +1,2 @@
-- [首页](/)
-- [API](/api)
-- [SDK](/sdk)
-- [登录](https://c.qiniu.com)
+- [控制台](https://c.qiniu.com)
+- [文档站](/)
