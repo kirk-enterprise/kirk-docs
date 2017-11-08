@@ -24,7 +24,7 @@
 | 名称           | 类型       | 长度上限 | 描述                               |
 | :----------- | :------- | :--- | :------------------------------- |
 | name  | `string` | 30   | 服务名字，应用内唯一，全小写，字母打头，可允许数字和符号 `-`。       |
-| type  | `string` | 32   | 服务类型，可为有状态服务：`stateless`，或无状态服务：`stateful`。       |
+| type  | `string` | 32   | 服务类型，可为有状态服务：`stateful`，或无状态服务：`stateless`。       |
 | serviceStatus  | `string` | 32   | 服务状态，可为启动（或创建）中：`creating`，或正常：`ok`，或出错：`error`。       |
 | resourceSpec  | `string` | 16   | 资源规格，具体的规格名称见前面定义。       |
 | instanceNumber  | `int` | 4   | 容器实例数量，无状态服务可 > 1，有状态服务仅能为 1。       |
