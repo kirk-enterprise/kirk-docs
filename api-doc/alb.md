@@ -533,7 +533,7 @@ BackendRule对象
 ]
 ```
 
-## 修改BackendRule
+## 删除BackendRule
 
 删除BackendRule
 
