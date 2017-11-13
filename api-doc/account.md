@@ -134,6 +134,7 @@ $ curl -X GET "localhost:8701/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "
 |:--------- |:------ |:------ |:---- |:----  |
 |userid|`string`|路径|是| 用户id|
 |X-Auth-Token|`string`|请求头|是| 用户token|
+|includeType|`string`|查询参数|否|是否包含项目类型|
 
 ### 返回码
 代码 | 描述
@@ -153,7 +154,7 @@ $ curl -X GET "localhost:8701/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "
 
 ### 示例
 ```
-$ curl -X GET "localhost:8701/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl -X GET "localhost:8701/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects?includeType=true" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 [
     {
         "description": "for test",
@@ -283,6 +284,7 @@ curl -X DELETE "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc
 |:--------- |:------ |:------ |:---- |:----  |
 |project-name|`string`|路径|是| 项目名|
 |X-Auth-Token|`string`|请求头|是| 项目管理员token|
+|detailed|`string`|查询参数|否|是否显示用户详细信息|
 
 ### 返回码
 代码 | 描述
@@ -295,20 +297,30 @@ curl -X DELETE "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc
 ### 返回体
 名称 | 描述
 ---- | ----
-[i].name  | 第i个用户的名字
-[i].id | 第i个用户的id
+[i].user.name  | 第i个用户的名字
+[i].user.id | 第i个用户的id
+[i].user.email|第i个用户的邮箱
+[i].role|第i个用户在项目中的角色
 
 ### 示例
 ```
-curl -X GET "localhost:8701/v1/projects/u-1810-default/users" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X GET "localhost:8701/v1/projects/u-1810-default/users?detailed=true" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 [
     {
-        "id": "17dc55867da74bf49ff74187c47c8203",
-        "name" : "test@qiniu.com"
+        "role": "member",
+        "user": {
+            "email": "g57g@163.com",
+            "id": "1494d0702d4e46079ee03c98c50337bb",
+            "name": "1380536766"
+        }
     },
     {
-        "id": "526d8563a67c4f0b89b99b69425f9a7d",
-        "name": "last@qiniu.com"
+        "role": "admin",
+        "user": {
+            "email": "intest@qiniu.com",
+            "id": "231d842bdb11414fa1c86a8e7249ab06",
+            "name": "admin"
+        }
     }
 ]
 ```
