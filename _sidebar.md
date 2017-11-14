@@ -2,7 +2,6 @@
   * [产品介绍](introduction/product-introduction.md)
   * [基本概念](introduction/basic-concepts.md)
   * [发布版本及功能](introduction/changelog.md)
-  * [计费说明](introduction/prices.md)
   * [七牛云用户服务协议](introduction/conditions-of-use.md)
   * [容器服务等级协议](introduction/kirk-sla.md)
 * 快速开始
