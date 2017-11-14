@@ -12,7 +12,7 @@
 
 ![](_figures/user-guide/configmap-items.gif)
 
-## 3.8.3 使用配置项
+## 3.8.3 环境变量中的应用
 
 **配置项** 用于便捷设置服务内 **环境变量的变量值**。
 
@@ -22,3 +22,5 @@
 3. 选择对应的配置项，如图 **"db-password"**
 
 ![](_figures/user-guide/configmap-add-item.png)
+
+## 3.8.4 配置文件中的应用
