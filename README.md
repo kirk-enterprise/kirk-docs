@@ -6,6 +6,6 @@
 
 > 新时代运维从这里开始
 
-- 文档站 1.0
+- 文档中心 1.0
 
 [了解详情](introduction/product-introduction.md)
