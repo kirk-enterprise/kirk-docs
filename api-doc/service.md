@@ -110,7 +110,7 @@
 ## 获取应用
 
 ### 请求
-`GET` `/regions/<regionName>/v1/projects/<projectName>/apps/appname`
+`GET` `/regions/<regionName>/v1/projects/<projectName>/apps/<appName>`
 
 ### 返回
 ```json
@@ -123,7 +123,7 @@
 ## 删除应用
 
 ### 请求
-`DELETE` `/regions/<regionName>/v1/projects/<projectName>/apps/appname`
+`DELETE` `/regions/<regionName>/v1/projects/<projectName>/apps/<appName>`
 
 ### 返回
 无
