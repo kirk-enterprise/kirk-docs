@@ -11,6 +11,11 @@ body.close main button.sidebar-toggle {
 }
 
 /* Content */
+/* image display center */
+.content .markdown-section p img {
+  display: block;
+  margin: 0 auto;
+}
 
 /* Markdown */
 
