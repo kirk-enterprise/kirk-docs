@@ -27,13 +27,15 @@
 | appName  | `string` | 30   | 服务所属应用名称，在获取服务信息时显示，新增服务等操作时不必填写 `-`。       |
 | projectName  | `string` | 30   | 服务所属项目名称，在获取服务信息时显示，新增服务等操作时不必填写 `-`。       |
 | type  | `string` | 32   | 服务类型，可为有状态服务：`stateful`，或无状态服务：`stateless`。       |
-| serviceStatus  | `string` | 32   | 服务状态，可为启动（或创建）中：`creating`，或正常：`ok`，或出错：`error`。       |
+| status  | `object` | N/A   | 服务状态对象，包含服务运行状态，各个状态的 Pod 个数。 详见下方服务运行状态格式      |
 | resourceSpec  | `string` | 16   | 资源规格，具体的规格名称见前面定义。       |
 | instanceNumber  | `int` | 4   | 容器实例数量，无状态服务可 > 1，有状态服务仅能为 1。       |
 | ports  | `array` | N/A   | `port` 数组，服务暴露的端口及协议列表       |
 | port.port  | `int` | 32   | 服务暴露的端口      |
 | port.protocol  | `int` | 32   | 服务端口通信协议，可为 TCP 或 UDP      |
 | containers  | `array` | N/A   | 服务包含的容器配置列表       |
+| pods  | `array` | N/A   | 服务运行时所有 Pod 的列表，详见下方 Pod 格式       |
+
 
 ## 容器描述
 
@@ -55,6 +57,34 @@
 | env.type      | `string` | 1024   | 环境变量给入方式，默认不给。目前支持给入 type 为 `configMap` 方式     |
 | env.name  | `string` | 1024   | 环境变量名称     |
 | env.value  | `string` | 1024   | 环境变量值，若 `type=configMap` 则填入 configMapName.keyName 的方式，给入 ConfigMap 名和 Key 名，中间以 `.` 符号分割     |
+
+
+## 服务运行状态 Status
+
+| 名称           | 类型       | 长度上限 | 描述                               |
+| :----------- | :------- | :--- | :------------------------------- |
+| phase  | `string` | 16   | 服务状态，可为：运行中 `running`，操作中 `pending`，已停止 `stopped`，未知 `unknown` |
+| desire  | `int` | 4   | 期望达到的实例数量，和 instanceNumber 等同。       |
+| current  | `int` | 4   | 当前运行时的 Pod 数量。       |
+| updated  | `int` | 4   | 当前已更新至最新版本的 Pod 数量       |
+| available  | `int` | 4   | 当前可用 Pod 数量。       |
+| unavailable  | `int` | 4   | 当前不可用 Pod 数量。       |
+
+## 服务运行时 Pod 信息
+
+| 名称           | 类型       | 长度上限 | 描述                               |
+| :----------- | :------- | :--- | :------------------------------- |
+| name  | `string` | 64   | Pod 名      |
+| status  | `object` | N/A   | Pod 运行状态      |
+| status.phase  | `object` | N/A   | Pod 运行状态，可为：运行中 `running`，操作中 `pending`，成功退出 `succeeded`，错误退出 `failed`，未知状态 `unknown`     |
+| status.reason  | `string` | 64   | Pod 出错原因      |
+| status.message  | `string` | 64   | Pod 出错描述      |
+| containerStatuses  | `array` | N/A   | Pod 下所有容器运行状态      |
+| containerStatuses.name  | `string` | 64   | 容器名称     |
+| containerStatuses.state  | `string` | 256   | 容器运行状态，可为：运行中 `running`，等待中 `waiting`，已终止 `terminated`，未知状态 `unknown`       |
+| containerStatuses.reason  | `string` | 256   | 容器出错原因      |
+| containerStatuses.message  | `string` | 256   | 容器出错描述      |
+
 
 ## 获取集群可用容器资源规格
 

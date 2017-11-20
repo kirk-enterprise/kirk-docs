@@ -15,7 +15,7 @@
 | 名称           | 类型       | 长度上限 | 描述                               |
 | :----------- | :------- | :--- | :------------------------------- |
 | name  | `string` | 32   | volume 名，Project 内唯一，全小写，字母打头，可允许数字和符号 `-`。       |
-| size | `int` | 4   | volume 大小，单位为 GB。 |
+| size | `int` | 4   | volume 大小，单位为 GB，最大可允许大小为 `1024G`。 |
 | status  | `string` | 32   | volume 状态，可为：`creating`，`ok`，或 `error`。       |
 | fsType      | `string` | 16   | volume 的文件系统类型，当前仅支持 "ext4"。                        |
 
