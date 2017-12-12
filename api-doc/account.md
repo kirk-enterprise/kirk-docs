@@ -9,6 +9,7 @@
 |:--------- |:------ |:------ |:---- |:----  |
 |name|`string`|请求体|是| 用户名| 
 |password|`string`|请求体|是| 用户密码| 
+|onlylogin|`bool`|请求体|否|仅登陆，将不会初始化用户私人空间|
 
 ### 返回码
 代码 | 描述
@@ -28,7 +29,7 @@ user.name  | 用户名。
 
 ### 示例
 ```
-$ curl -X POST "localhost:8701/v1/usertoken" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
+$ curl -X POST "localhost:8701/v1/usertoken" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam","onlylogin":true}'
 {
     "token" : {
         "expires_at": "2017-10-26T12:44:23.000000Z",
@@ -434,4 +435,67 @@ curl -X GET "localhost:8701/v1/regions" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s0
         "id": "dev2"
     }
 ]
+```
+
+## 创建项目
+### 请求
+`POST /v1/projects`
+
+### 参数说明
+| 名称      |  类型   |  位置    | 必选 |  描述|
+|:--------- |:------ |:------ |:---- |:----  |
+|X-Auth-Token|`string`|请求头|是| 用户token|
+|name|`string`|请求体|是|项目名称|
+|description|`stirng`|请求体|否|项目描述|
+|type|`string`|请求体|否|项目类型|
+
+### 返回码
+代码 | 描述
+---- | ----
+200  | 正常返回。
+401  | （错误）访问失败，请使用正确的token。
+403  | （错误）访问失败，访问违反policy。
+404  | （错误）不正确的访问路径，请参考开放 API 文档。
+
+### 返回体
+名称 | 描述
+---- | ----
+name | 项目名字
+description | 项目描述
+type | 项目类型
+
+### 示例
+```
+curl -X POST "localhost:8701/v1/projects" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S" -d '{"name":"test","description":"for test", "type":"personal"}'
+{
+    "name": "test",
+    "description": "for test",
+    "type": "personal"
+}
+```
+
+## 验证用户密码
+### 请求
+`POST /v1/validateuser`
+
+### 参数说明
+| 名称      |  类型   |  位置    | 必选 |  描述|
+|:--------- |:------ |:------ |:---- |:----  |
+|X-Auth-Token|`string`|请求头|是| 用户token|
+|password|`string`|请求体|是|用户密码|
+
+### 返回码
+代码 | 描述
+---- | ----
+200  | 正常返回。
+401  | （错误）访问失败，请使用正确的token。
+403  | （错误）访问失败，访问违反policy。
+404  | （错误）不正确的访问路径，请参考开放 API 文档。
+
+### 返回体
+无
+
+### 示例
+```
+curl -X POST "localhost:8701/v1/validateuser" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S" -d '{"password":"test"}'
 ```
