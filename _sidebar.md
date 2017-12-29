@@ -13,6 +13,7 @@
   * [服务管理](user-guide/service.md)
   * [容器管理](user-guide/container.md)
   * [存储管理](user-guide/storage.md)
+  * [负载均衡](user-guide/loadbalance.md)
   * [镜像管理](user-guide/image.md)
   * [监控 & 日志](user-guide/log-and-monitor.md)
   * [配置中心](user-guide/configmap.md)
