@@ -17,6 +17,7 @@
   * [域名管理](user-guide/domain.md)
   * [镜像管理](user-guide/image.md)
   * [配置中心](user-guide/configmap.md)
+  * [告警中心](user-guide/warning.md)
   * [监控 & 日志](user-guide/log-and-monitor.md)
 * API 文档
   * [账户管理](api-doc/account.md)
