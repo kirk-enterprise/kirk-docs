@@ -24,7 +24,8 @@
   * [服务接口](api-doc/service.md)
   * [存储接口](api-doc/volume.md)
   * [配置接口](api-doc/configmap.md)
-  * [应用负载均衡接口](api-doc/alb.md)
+  * [HTTP/HTTPS 负载均衡接口](api-doc/alb.md)
+  * [TCP负载均衡](api-doc/tlb.md)
   * [云盘接口](api-doc/volume.md)
 * 最佳实践
   * [创建 Wordpress 应用](best-practise/create-wordpress-app.md)
