@@ -119,7 +119,7 @@
 
 ## 更新 TLB
 
-`PATCH` `/v1/projects/<projectname>/tlbs/<tlbname>`
+`PUT` `/v1/projects/<projectname>/tlbs/<tlbname>`
 
 ### 参数
 
