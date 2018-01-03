@@ -1,7 +1,4 @@
-# 七层负载均衡（ALB） API
-
-Application Load Balancer，简称 **ALB** ，是七层的HTTP负载均衡服务。
-
+# HTTP/HTTPS 负载均衡 API
 
 ## Domain描述（自定义域名）
 | 名称                   | 类型       | 长度上限 | 描述                                       |

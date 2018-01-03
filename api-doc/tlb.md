@@ -1,6 +1,4 @@
-# 四层负载均衡（TLB）API
-
-Transport Load Balancer，简称 **TLB**，是工作在传输层的负载均衡服务。
+# TCP 负载均衡 API
 
 ## TLB描述
 | 名称 | 类型 | 长度上限 | 描述 |
