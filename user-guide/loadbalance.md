@@ -95,3 +95,7 @@
 
 ![添加负载均衡](_figures/user-guide/lb-4-delete.png)
 
+## 3.6.3 监控
+平台同时支持面向七层「HTTP/HTTPS」负载均衡的域名监控，监控指标包含「流入流量」「流出流量」「QPS」「响应时间」「返回码」。监控数据最长保持一周。
+
+![添加负载均衡](_figures/user-guide/loadbalance-7-monitor.png)
