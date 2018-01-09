@@ -39,7 +39,7 @@
 ```json
 {
 	"name": "mytlb",
-	"descriptin": "this is my first tlb.",
+	"description": "this is my first tlb.",
 	"ipType": "telecom",
 	"chargeMode": "bandwidth",
 	"bandwidthLimit": 10,
@@ -74,7 +74,7 @@
 ```json
 {
 	"name": "mytlb",
-	"descriptin": "this is my first tlb.",
+	"description": "this is my first tlb.",
 	"projectName": "myprj",
 	"status": "ready",
 	"ip": "10.10.10.10",
@@ -144,7 +144,7 @@
 ```json
 {
 	"name": "mytlb",
-	"descriptin": "updated description",
+	"description": "updated description",
 	"projectName": "myprj",
 	"status": "ready",
 	"ip": "10.10.10.10",
@@ -186,7 +186,7 @@
 ```json
 {
 	"name": "mytlb",
-	"descriptin": "this is my first tlb.",
+	"description": "this is my first tlb.",
 	"projectName": "myprj",
 	"status": "ready",
 	"ip": "10.10.10.10",
@@ -246,7 +246,7 @@
 [
 	{
 		"name": "mytlb",
-		"descriptin": "this is my first tlb.",
+		"description": "this is my first tlb.",
 		"projectName": "myprj",
 		"status": "ready",
 		"ip": "10.10.10.10",
