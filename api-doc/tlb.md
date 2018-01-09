@@ -32,7 +32,7 @@
 
 ## 创建 TLB
 
-`POST` `/v1/projects/<projectname>/tlbs`
+`POST` `/regions/<regionName>/v1/projects/<projectName>/tlbs`
 
 ### 参数
 
@@ -119,7 +119,7 @@
 
 ## 更新 TLB
 
-`PUT` `/v1/projects/<projectname>/tlbs/<tlbname>`
+`PUT` `/regions/<regionName>/v1/projects/<projectName>/tlbs/<tlbName>`
 
 ### 参数
 
@@ -175,7 +175,7 @@
 
 ## 获取 TLB 信息
 
-`GET` `/v1/projects/<projectname>/tlbs/<tlbname>`
+`GET` `/regions/<regionName>/v1/projects/<projectName>/tlbs/<tlbName>`
 
 ### 参数
 
@@ -215,7 +215,7 @@
 
 ## 删除 TLB
 
-`DELETE` `/v1/projects/projectname/tlbs/<tlbname>`
+`DELETE` `/regions/<regionName>/v1/projects/projectName/tlbs/<tlbName>`
 
 ### 参数
 
@@ -234,7 +234,7 @@
 
 ## 列出 TLB
 
-`GET` `/v1/projects/<projectname>/tlbs?app=<appname>&service=<servicename>`
+`GET` `/regions/<regionName>/v1/projects/<projectName>/tlbs?app=<appName>&service=<serviceName>`
 
 ### 参数
 
