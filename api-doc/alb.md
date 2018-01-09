@@ -51,7 +51,7 @@
 
 ### 请求
 
-`POST` `/v1/projects/<projectname>/domains`
+`POST` `/regions/<regionName>/v1/projects/<projectname>/domains`
 
 ```json
 {
@@ -91,7 +91,7 @@
 
 ### 请求
 
-`GET` `/v1/projects/<projectname>/domains`
+`GET` `/regions/<regionName>/v1/projects/<projectname>/domains`
 
 
 ### 参数
@@ -133,7 +133,7 @@ Domain列表
 
 ### 请求
 
-`PATCH` `/v1/projects/<projectname>/domains`
+`PATCH` `/regions/<regionName>/v1/projects/<projectname>/domains`
 
 ```json
 {
@@ -173,7 +173,7 @@ Domain信息
 
 ### 请求
 
-`DELETE` `/v1/projects/<projectName>/domains`
+`DELETE` `/regions/<regionName>/v1/projects/<projectName>/domains`
 
 
 ### 参数
@@ -193,7 +193,7 @@ Domain信息
 
 ### 请求
 
-`POST` `/v1/projects/<projectname>/albs`
+`POST` `/regions/<regionName>/v1/projects/<projectname>/albs`
 
 ```json
 {
@@ -272,7 +272,7 @@ Domain信息
 
 ### 请求
 
-`GET` `/v1/projects/<projectname>/albs`
+`GET` `/regions/<regionName>/v1/projects/<projectname>/albs`
 
 ### 参数
 | 名称                   | 类型       | 长度上限|必选| 描述                                       |
@@ -328,7 +328,7 @@ alb信息列表
 
 ### 请求
 
-`PATCH` `/v1/projects/<projectname>/albs`
+`PATCH` `/regions/<regionName>/v1/projects/<projectname>/albs`
 
 ```json
 {
@@ -392,7 +392,7 @@ ALB信息
 
 ### 请求
 
-`DELETE` `/v1/projects/<projectName>/albs`
+`DELETE` `/regions/<regionName>/v1/projects/<projectName>/albs`
 
 ### 参数
 | 名称                   | 类型       | 长度上限 | 必选|描述                                       |
@@ -411,7 +411,7 @@ ALB信息
 
 ### 请求
 
-`POST` `/v1/projects/<projectName>/albrules`
+`POST` `/regions/<regionName>/v1/projects/<projectName>/albrules`
 
 ```json
 {
@@ -456,7 +456,7 @@ BackendRule对象
 
 ### 请求
 
-`GET` `/v1/projects/<projectName>/albrules`
+`GET` `/regions/<regionName>/v1/projects/<projectName>/albrules`
 
 ### 参数
 | 名称                   | 类型       | 长度上限 |必选| 描述                                       |
@@ -490,7 +490,7 @@ BackendRule对象
 
 ### 请求
 
-`PATCH` `/v1/projects/<projectName>/albrules`
+`PATCH` `/regions/<regionName>/v1/projects/<projectName>/albrules`
 
 ```json
 {
@@ -536,7 +536,7 @@ BackendRule对象
 
 ### 请求
 
-`DELETE` `/v1/projects/<projectName>/albrules`
+`DELETE` `/regions/<regionName>/v1/projects/<projectName>/albrules`
 
 
 ### 参数
