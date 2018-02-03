@@ -5,7 +5,7 @@
   * [七牛云用户服务协议](introduction/conditions-of-use.md)
   * [容器服务等级协议](introduction/kirk-sla.md)
 * 快速开始
-  * [创建一个应用](quick-start/create-app.md)
+  * [基于镜像创建应用](quick-start/create-app.md)
   * [实现服务在集群内/集群外的访问](quick-start/cluster-app.md)
 * 用户指南
   * [账号注册](user-guide/registry.md)
