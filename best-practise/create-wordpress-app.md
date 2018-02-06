@@ -8,7 +8,6 @@
 
 [2. 完成创建和访问应用](#jump3)
 
-Wordpress应用包含两类服务：mysql数据库服务和wordpress web服务。wordpress web服务需要配置公网，暴露到集群外部。
 ## <span id="jump1">1. 添加应用</span>
 
 **操作如下：**    
