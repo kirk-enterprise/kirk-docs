@@ -6,7 +6,7 @@
   * [容器服务等级协议](introduction/kirk-sla.md)
 * 快速开始
   * [基于镜像创建应用](quick-start/create-app.md)
-  * [实现服务在集群内/集群外的访问](quick-start/cluster-app.md)
+  * [服务在集群内/集群外的访问](quick-start/cluster-app.md)
 * 用户指南
   * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
