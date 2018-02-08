@@ -1,21 +1,45 @@
 # 3.2 应用管理
+应用是服务的上一层抽象，完成对服务资源的聚类。
+
+![](_figures/user-guide/app-create-0.png)
 
 ## 3.2.1 添加应用
+应用创建有两种方式：「基于镜像创建」和「从应用市场创建」。
+
+?> **基于镜像创建：**应用下服务基于「镜像中心」创建，需要对应用下服务进行配置和编排<br>
+   **从应用市场创建：**基于「应用市场」中的应用模板创建，应用通过简单的配置，就能够被一键部署。
+   
+![](_figures/user-guide/app-create-1.png)
+   
+### 3.2.1.1 基于镜像创建
 
 **1. 应用名**
 
-?> **要求：**长度为2-32, 可以是小写字母或数字, 首字符必须是小写字母
+?> **要求：**2-30位的小写字母、数字，开头为字母
 
-2. 添加服务** [详见3.3.1](/user-guide/service?id=_331-%e6%b7%bb%e5%8a%a0%e6%9c%8d%e5%8a%a1)
+**2. 空间名：**应用归属于该空间下资源。下拉控制台顶部的「空间」进行空间切换。
 
-![添加应用](_figures/user-guide/app-create.png)
+![下拉选择空间](_figures/quick-start/create-app-namespace.png)
+
+**2. 添加服务** [详见3.3.1](/user-guide/service?id=_331-%e6%b7%bb%e5%8a%a0%e6%9c%8d%e5%8a%a1)
+
+![添加应用](_figures/user-guide/app-create-2.png)
 
 ***
 ## 3.2.2 删除应用
 
-![删除应用](_figures/user-guide/app-delete.gif)
+**操作如下：**
+
+1）选中待删除应用
+
+2）点击「删除应用」
+
+!> 应用删除后，将不可恢复。
+
+![添加应用](_figures/user-guide/app-delete.png)
 
 ***
 ## 3.2.3 日志 & 监控
 
-七牛容器云提供应用级别的日志和监控。[详见3.7](user-guide/log-and-monitor.md)
+平台提供应用级别的日志和监控，对应用下所有容器资源的日志和监控做了聚类统计。
+[详见3.11](user-guide/log-and-monitor.md)
