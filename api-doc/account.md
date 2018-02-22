@@ -28,7 +28,7 @@ user.name  | 用户名。
 
 ### 示例
 ```
-$ curl -X POST "localhost:8701/v1/usertoken" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
+$ curl -X POST "https://keapi.qiniu.com/v1/usertoken" -d '{"name":"1508722467@fake.qiniu.io","password":"aslanteam"}'
 {
     "token" : {
         "expires_at": "2017-10-26T12:44:23.000000Z",
@@ -73,7 +73,7 @@ role | 权限名
 
 ### 示例
 ```
-$ curl "localhost:8701/v1/projects/1508809392/token" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl "https://keapi.qiniu.com/v1/projects/1508809392/token" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 {
     "project": "1508809392",
     "roles": ["admin"],
@@ -117,7 +117,7 @@ name  | 用户名。
 
 ### 示例
 ```
-$ curl -X GET "localhost:8701/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl -X GET "https://keapi.qiniu.com/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 {
     "email": "1508809392@fake.qiniu.io",
     "id": "bdbf8159106a42dc9ee34e7ca2bf4c34",
@@ -154,7 +154,7 @@ $ curl -X GET "localhost:8701/v1/userinfo/bdbf8159106a42dc9ee34e7ca2bf4c34" -H "
 
 ### 示例
 ```
-$ curl -X GET "localhost:8701/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects?includeType=true" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl -X GET "https://keapi.qiniu.com/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects?includeType=true" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 [
     {
         "description": "for test",
@@ -191,7 +191,7 @@ $ curl -X GET "localhost:8701/v1/users/bdbf8159106a42dc9ee34e7ca2bf4c34/projects
 
 ### 示例
 ```
-$ curl -X GET "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl -X GET "https://keapi.qiniu.com/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 [
     "admin"
 ]
@@ -220,7 +220,7 @@ $ curl -X GET "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9
 
 ### 示例
 ```
-$ curl -X PUT "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
+$ curl -X PUT "https://keapi.qiniu.com/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token: gAAAAABZ7prUV2dfhZ-V0ttF1Ro6nIzkdAx2AwLPHW3JaephqjAAVOMUBEIbb-SVnQswIKj1mG2VMkejzp1DmA5yoOO-M1R34S0OXfKUta3diuWcqZhehHyju3jyLlUUcnuihtRic0GCP2931gyIZebtURksdoIbjg"
 ```
 
 ## 查询用户在一个项目上是否拥有特定角色
@@ -246,7 +246,7 @@ $ curl -X PUT "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9
 
 ### 示例
 ```
-curl -X HEAD "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X HEAD "https://keapi.qiniu.com/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 ```
 
 ## 删除用户在一个项目上的角色
@@ -272,7 +272,7 @@ curl -X HEAD "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9e
 
 ### 示例
 ```
-curl -X DELETE "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X DELETE "https://keapi.qiniu.com/v1/projects/u-1810-default/users/bdbf8159106a42dc9ee34e7ca2bf4c34/roles/admin" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 ```
 
 ## 获取一个项目下的所有用户
@@ -304,7 +304,7 @@ curl -X DELETE "localhost:8701/v1/projects/u-1810-default/users/bdbf8159106a42dc
 
 ### 示例
 ```
-curl -X GET "localhost:8701/v1/projects/u-1810-default/users?detailed=true" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X GET "https://keapi.qiniu.com/v1/projects/u-1810-default/users?detailed=true" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 [
     {
         "role": "member",
@@ -352,7 +352,7 @@ type | 项目类型
 
 ### 示例
 ```
-curl -X GET "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X GET "https://keapi.qiniu.com/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 {
     "description" : "for test",
     "name" : "u-1810-default",
@@ -387,7 +387,7 @@ description | 项目描述
 
 ### 示例
 ```
-curl -X PATCH "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S" -d '{"description":"new info"}'
+curl -X PATCH "https://keapi.qiniu.com/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S" -d '{"description":"new info"}'
 {
     "description" : "new info",
     "name" : "u-1810-default"
@@ -419,7 +419,7 @@ curl -X PATCH "localhost:8701/v1/projects/u-1810-default" -H "X-Auth-Token:gAAAA
 
 ### 示例
 ```
-curl -X GET "localhost:8701/v1/regions" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
+curl -X GET "https://keapi.qiniu.com/v1/regions" -H "X-Auth-Token:gAAAAABZ7s8YtIMojTGj4s07NKaZF4CoQqfLcOsb70LL3b3kiTh3tRi4Cy7T9BVzUxVTeEGPrawFDcxio5OUnfphP2PvLrUAziXJFPRGL2lz2ydBulvAnoknRVe53zfuYTdzpqQ1wDgN47oXuXl9Y_bF8XT6Uf2_l7EC8-FNJzN7qcS8YBxJ7Px-S7XEgc9baFxOfPd1f-4S"
 [
     {
         "description": "",
