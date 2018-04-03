@@ -2,10 +2,9 @@
   * [产品介绍](introduction/product-introduction.md)
   * [基本概念](introduction/basic-concepts.md)
 * 快速开始
-  * [基于镜像创建应用](quick-start/create-app.md)
-  * [服务在集群内/集群外的访问](quick-start/cluster-app.md)
+  * [开始创建一个应用](quick-start/create-app.md)
+  * [服务的内网访问和外网访问](quick-start/cluster-app.md)
 * 用户指南
-  * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
   * [服务管理](user-guide/service.md)
   * [容器管理](user-guide/container.md)
