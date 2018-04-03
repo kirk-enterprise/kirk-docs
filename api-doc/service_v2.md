@@ -173,7 +173,6 @@
 
 | http 代码 | 错误码                | 说明                            |
 | :------ | :----------------- | :---------------------------- |
-| 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
 | 404     | AppNotFound        | 指定的应用不存在。                     |
 | 409     | ServiceExists      | 同名服务已经存在。                     |
 
@@ -265,7 +264,6 @@
 
 | http 代码 | 错误码                | 说明                            |
 | :------ | :----------------- | :---------------------------- |
-| 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
 | 404     | AppNotFound        | 指定的应用不存在。                     |
 | 409     | ServiceExists      | 同名服务已经存在。                     |
 
@@ -425,7 +423,6 @@
 
 | http 代码 | 错误码                | 说明                            |
 | :------ | :----------------- | :---------------------------- |
-| 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
 | 404     | AppNotFound        | 指定的应用不存在。                     |
 | 409     | ServiceExists      | 同名服务已经存在。                     |
 
@@ -478,7 +475,6 @@
 
 | http 代码 | 错误码                | 说明                            |
 | :------ | :----------------- | :---------------------------- |
-| 403     | OperationForbbiden | 无法在非 kirk 类型的 app 下创建 service |
 | 404     | AppNotFound        | 指定的应用不存在。                     |
 | 409     | ServiceExists      | 同名服务已经存在。                     |
 
