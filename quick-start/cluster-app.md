@@ -19,8 +19,9 @@
 ?> 服务创建后会自动添加DNS记录，服务以 **<应用名>-<服务名>:<端口号>** 的形式暴露访问端口
 
 ![](_figures/quick-start/cluster-app-inside.png)
+
 ***
-## <span id="jump2">2.2.2 服务的外网访问</span>
+## <span id="jump1">2.2.2 服务的外网访问</span>
 负载均衡可以扩展服务的访问能力到外网，平台支持「HTTP/HTTPS」七层和「TCP」四层两类负载均衡。
     
 ### <span id="jump21">HTTP/HTTPS七层负载均衡</span>
