@@ -11,6 +11,7 @@
   * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
   * [服务管理](user-guide/service.md)
+  * [服务管理V2](user-guide/service_v2.md)
   * [容器管理](user-guide/container.md)
   * [存储管理](user-guide/storage.md)
   * [负载均衡](user-guide/loadbalance.md)
