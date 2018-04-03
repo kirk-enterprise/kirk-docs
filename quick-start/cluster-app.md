@@ -62,4 +62,4 @@
 
 ![](_figures/quick-start/cluster-app-balance4-1.png) 
    
-4）点击「创建」，完成四层负载均衡的创建    
+**4）点击「创建」，完成四层负载均衡的创建**    
