@@ -11,7 +11,6 @@
   * [账号注册](user-guide/registry.md)
   * [应用管理](user-guide/app.md)
   * [服务管理](user-guide/service.md)
-  * [服务管理V2](user-guide/service_v2.md)
   * [容器管理](user-guide/container.md)
   * [存储管理](user-guide/storage.md)
   * [负载均衡](user-guide/loadbalance.md)
@@ -23,6 +22,7 @@
 * API 文档
   * [账户管理](api-doc/account.md)
   * [服务接口](api-doc/service.md)
+  * [服务接口V2](api-doc/service_v2.md)
   * [存储接口](api-doc/volume.md)
   * [配置接口](api-doc/configmap.md)
   * [HTTP/HTTPS 负载均衡接口](api-doc/alb.md)
