@@ -40,5 +40,5 @@ Container，是docker镜像运行时的实例。
 ***
 
 ## 3.4.5 容器日志和监控
-平台提供容器日志和容器监控。[详见3.11](user-guide/log-and-monitor.md)
+平台提供容器日志和容器监控。[详见3.12](user-guide/log-and-monitor.md)
 
