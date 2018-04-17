@@ -28,7 +28,7 @@
 七层负载均衡可以通过两种方式挂载到服务：    
 第一种是在「创建服务」时添加。    
 第二种是先在「负载均衡」组件页面下创建负载均衡，再选择需要挂载的服务。    
-这里以第一种为例，第二种[详见3.6](user-guide/loadbalance_7.md)，操作如下:    
+这里以第一种为例，第二种[详见3.6.2](https://kirk-enterprise.github.io/kirk-docs/#/user-guide/loadbalance_7?id=先创建负载均衡，再选择挂载的服务)，操作如下:    
 
 **1）首先「开启负载均衡」**
 
@@ -38,7 +38,7 @@
    **名称·：**长度为2-64的小写字母、数字或"-", 不能以"-"开头或结尾。<br>
    **描述：**负载均衡的文本描述。<br>
    **计费方式：**负载均衡的计费方式，当前仅支持按流量计费。<br>
-   **域名：**负载均衡绑定的域名，[详见3.7](user-guide/domain.md)。<br>
+   **域名：**负载均衡绑定的域名，[详见3.6.5](https://kirk-enterprise.github.io/kirk-docs/#/user-guide/loadbalance_7?id=_365-如何绑定用户域名)。<br>
 
 ![](_figures/quick-start/cluster-app-7loadbalance-on.jpg)
 
