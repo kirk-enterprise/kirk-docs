@@ -86,7 +86,7 @@
 内网通过dns实现服务的注册发现。服务的端口暴露方式是**应用名-服务名:服务端口**。
 
 **如何配置服务的外网暴露：**    
-服务的外网暴露需要添加「负载均衡」到服务。外网暴露适用于跨空间、跨区域的服务互访，以及用户的服务访问。[详见3.6](https://kirk-enterprise.github.io/kirk-docs/#/quick-start/cluster-app?id=span-idjump2222-服务的外网访问)
+服务的外网暴露需要添加「负载均衡」到服务。外网暴露适用于跨空间、跨区域的服务互访，以及用户的服务访问。[服务的外网访问](https://kirk-enterprise.github.io/kirk-docs/#/quick-start/cluster-app?id=span-idjump2222-服务的外网访问)
 
 **7. 配置文件**：实现容器内配置文件在平台上做维护的目的。将「配置中心」的配置集挂载到容器内某个文件路径。[详见3.10](user-guide/configmap.md)
 
