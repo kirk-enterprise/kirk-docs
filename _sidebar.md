@@ -28,6 +28,6 @@
   * [TCP负载均衡](api-doc/tlb.md)
   * [云盘接口](api-doc/volume.md)
 * 最佳实践
-  * [创建 Wordpress 应用](best-practise/create-wordpress-app.md)
+  * [开始一个Wordpress应用](best-practise/create-wordpress-app.md)
 * Q & A
   * [服务相关](q-and-a/about-service.md)
