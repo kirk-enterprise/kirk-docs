@@ -15,7 +15,7 @@
   * [HTTP/HTTPS七层负载均衡](user-guide/loadbalance_7.md)
   * [TCP四层负载均衡](user-guide/loadbalance_4.md)
   * [域名管理](user-guide/domain.md)
-  * [镜像管理](user-guide/image.md)
+  * [镜像中心](user-guide/image.md)
   * [配置中心](user-guide/configmap.md)
   * [告警中心](user-guide/warning.md)
   * [监控 & 日志](user-guide/log-and-monitor.md)
