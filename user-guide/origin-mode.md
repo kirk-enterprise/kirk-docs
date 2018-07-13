@@ -2,6 +2,10 @@
 原生模式提供了一种通过kubernetes的dashboard和kubectl来接管七牛容器集群的方式。通过这种方式，如果你已经习惯于使用kubenetes的原生工具，可以通过原生工具的方式来管理你在七牛容器云上的资源。
 
 !> 如果要使用原生模式，在创建空间时请选择空间类型为「原生模式」。
+
+**kubectl介绍说明：**https://kubernetes.io/docs/reference/kubectl/overview/<br>
+**dashboard介绍说明：**https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
 ***
 
 ## 3.13.1 属性说明
@@ -113,4 +117,5 @@ kubectl是kubenetes原生支持的命令行工具。
 `kubectl cluster-info`
 ***
 
-其他说明
+## 3.13.4 其他说明
+**kubectl命令行说明：**https://kubernetes.io/docs/reference/kubectl/kubectl/
