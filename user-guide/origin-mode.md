@@ -63,7 +63,7 @@ kubectl是kubenetes原生支持的命令行工具。
 
 **2）将二进制文件移动到环境变量的PATH中**
 
-### 3.13.2.2 验证kubectl安装成功
+### 3.13.2.2 验证是否成功安装kubectl
 输入以下命令，查看当前安装的kubectl版本
 
 `kubectl version`
@@ -111,8 +111,8 @@ kubectl是kubenetes原生支持的命令行工具。
 
 `$env:KUBECONFIG="<kubeconfig文件所在位置>"`
 
-### 3.13.3.3 验证kubectl安装成功
-输入以下命令，如果有URL被返回，则表示kubectl配置被成功。
+### 3.13.3.3 验证是否成功接入集群
+输入以下命令，如果有URL被返回，则表示kubectl已经可以接入集群。
 
 `kubectl cluster-info`
 ***
