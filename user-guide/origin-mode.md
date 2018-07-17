@@ -25,13 +25,19 @@ kubectl是kubenetes原生支持的命令行工具。
 
 ## 3.13.2 如何下载并安装kubectl工具
 ### 3.13.2.1 下载并kubectl工具
-请保证你使用的kubectl版本和集群的kubernetes版本一致，或者高于它。
+
+我们提供kubectl工具的内网下载方式，支持的版本为**v1.7.16**、**v1.11.0**。<br>
+
+!> 请保证使用的kubectl工具版本和集群的kubernetes版本一致。
 
 #### MacOS
 
 **1）通过命令行下载kubectl**
 
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.11.0/darwin/amd64/kubectl`
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>/darwin/amd64/kubectl`
+
+例如当前集群为v1.7.16，则命令行如下：<br>
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/darwin/amd64/kubectl`
 
 **2）将其变为可执行文件**
 
@@ -45,7 +51,10 @@ kubectl是kubenetes原生支持的命令行工具。
 
 **1）通过命令行下载kubectl**
 
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.11.0/linux/amd64/kubectl`
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>0/linux/amd64/kubectl`
+
+例如当前集群为v1.7.16，则命令行如下：<br>
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/linux/amd64/kubectl`
 
 **2）将其变为可执行文件**
 
@@ -59,7 +68,10 @@ kubectl是kubenetes原生支持的命令行工具。
 
 **1）通过命令行下载kubectl**
 
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.11.0/windows/amd64/kubectl.exe`
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>/windows/amd64/kubectl.exe`
+
+例如当前集群为v1.7.16，则命令行如下：<br>
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/windows/amd64/kubectl.exe`
 
 **2）将二进制文件移动到环境变量的PATH中**
 
