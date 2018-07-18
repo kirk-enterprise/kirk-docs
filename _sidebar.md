@@ -1,7 +1,6 @@
 * 产品简介
   * [产品介绍](introduction/product-introduction.md)
   * [基本概念](introduction/basic-concepts.md)
-  * [发布版本及功能](introduction/changelog.md)
   * [七牛云用户服务协议](introduction/conditions-of-use.md)
   * [容器服务等级协议](introduction/kirk-sla.md)
 * 快速开始
@@ -19,6 +18,8 @@
   * [配置中心](user-guide/configmap.md)
   * [告警中心](user-guide/warning.md)
   * [监控 & 日志](user-guide/log-and-monitor.md)
+  * [空间管理](user-guide/namespace.md)
+  * [原生模式](user-guide/origin-mode.md)
 * API 文档
   * [账户管理](api-doc/account.md)
   * [服务接口](api-doc/service.md)
