@@ -108,15 +108,22 @@ kubectl是kubenetes原生支持的命令行工具。
 操作如下：
 
 #### MacOS
-**1）通过命令行移动kubeconfig文件到`~/.kube/`下**
+**1）创建子目录`~/.kube/`**
 
-`mv ./<kubeconfig文件所在路径>/config /User/<.kube文件夹所在路径>/.kube`
+`mkdir ~/.kube/`
+
+**2）通过命令行移动kubeconfig文件到`~/.kube/`下**
+
+`mv ～/<kubeconfig文件所在路径>/config ~/.kube/`
 
 #### Linux
+**1）创建子目录`~/.kube/`**
 
-**1）通过命令行移动kubeconfig文件到`~/.kube/`下**
+`mkdir ~/.kube/`
 
-`mv ./<kubeconfig文件所在路径>/config /User/<.kube文件夹所在路径>/.kube`
+**2）通过命令行移动kubeconfig文件到`~/.kube/`下**
+
+`mv ～/<kubeconfig文件所在路径>/config ~/.kube/`
 
 #### Windows
 **1）更改kubectl寻找配置文件的位置(配置KUBECONFIG环境变量)**
