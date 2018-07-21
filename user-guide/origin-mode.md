@@ -1,4 +1,4 @@
-# 3.13 原生模式
+# 3.14 原生模式
 原生模式提供了一种通过kubernetes的dashboard和kubectl来接管七牛容器集群的方式。通过这种方式，如果你已经习惯于使用kubenetes的原生工具，可以通过原生工具的方式来管理你在七牛容器云上的资源。
 
 !> 如果要使用原生模式，在创建空间时请选择空间类型为「原生模式」。
@@ -138,3 +138,69 @@ kubectl是kubenetes原生支持的命令行工具。
 
 ## 3.13.4 其他说明
 **kubectl命令行说明：**https://kubernetes.io/docs/reference/kubectl/kubectl/
+
+
+
+## 3.13.5 原生模式下使用「HTTP 负载均衡」和 「TCP 负载均衡」
+在原生模式下，可以使用下述的方式来创建简易模式下对应的负载均衡资源。
+
+### 3.13.5.1 TCP 负载均衡
+
+创建下述 YAML 文件：
+
+```yaml
+apiVersion: ke.qiniu.com/v1
+kind: TLB
+metadata:
+  name: tlbname
+  namespace: ns
+spec:
+  bandwidthLimit: 100
+  chargeMode: bandwidth
+  ipType: telecom
+  serviceSpec:
+    ports:
+    - name: port-1935
+      port: 1935
+      protocol: TCP
+      targetPort: 1935
+    selector:
+      app: appv1
+```
+其中 `spec` 内的各个参数表示：
+- bandwidthLimit: 带宽限制，范围为 0-1000 Mbps
+- chargeMode: 计费方式，目前只支持 `bandwidth` 流量计费。
+- ipType: 可选 `telecom` 电信、`unicom` 联通、`mobile` 移动、`in-cluster` 内网
+- serviceSpec.ports.port: 对应监听的端口
+- serviceSpec.ports.protocol: 协议，当前仅支持 TCP
+- serviceSpec.ports.targetPort: Pod 监听端口
+- serviceSpec.selector: Pod 的 LabelSelector
+
+使用 `kubectl create -f` 命令 创建后，通过下述命令可以获取 TCP 负载均衡资源的详细信息：
+
+```
+kubectl -n ns get tlb tlbname -o yaml
+```
+
+此时获得的 TLB 资源内，会有 `status` 字段：
+
+```yaml
+apiVersion: ke.qiniu.com/v1
+kind: TLB
+...
+status:
+  phase: pending
+```
+phase `pending` 状态表示系统正在为此 TCP 负载均衡分配一个 IP，等分配完成后，status.phase 会变成 `ready`，此时 status 内会添加一个 ip 的字段，表示分配后的 IP 地址
+
+
+```yaml
+apiVersion: ke.qiniu.com/v1
+kind: TLB
+...
+status:
+  ip: 115.231.110.9
+  phase: ready
+```
+
+至此，一个 TCP 负载均衡已经创建完毕并可以对外提供服务。
