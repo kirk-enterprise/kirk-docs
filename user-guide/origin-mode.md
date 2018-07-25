@@ -66,12 +66,13 @@ kubectl是kubenetes原生支持的命令行工具。
 
 #### Windows
 
-**1）通过命令行下载kubectl**
+**1）通过浏览器下载kubectl**
 
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>/windows/amd64/kubectl.exe`
+在下面的链接中正确补充`<kubectl工具版本>`后，通过浏览器可以直接下载可执行文件。<br>
+`http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>/windows/amd64/kubectl.exe`
 
-例如当前集群为v1.7.16，则命令行如下：<br>
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/windows/amd64/kubectl.exe`
+例如当前集群为v1.7.16，则下载地址为：<br>
+`http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/windows/amd64/kubectl.exe`
 
 **2）将二进制文件移动到环境变量的PATH中**
 
