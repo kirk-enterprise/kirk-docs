@@ -51,7 +51,7 @@ kubectl是kubenetes原生支持的命令行工具。
 
 **1）通过命令行下载kubectl**
 
-`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>0/linux/amd64/kubectl`
+`curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/<kubectl工具版本>/linux/amd64/kubectl`
 
 例如当前集群为v1.7.16，则命令行如下：<br>
 `curl -LO http://oyh1cogl9.bkt.clouddn.com/install/kubectl-release/v1.7.16/linux/amd64/kubectl`
