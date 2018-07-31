@@ -5,7 +5,6 @@
 
 **kubectl介绍说明：**https://kubernetes.io/docs/reference/kubectl/overview/<br>
 **dashboard介绍说明：**https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
-
 ***
 
 ## 3.13.1 属性说明
@@ -19,9 +18,10 @@ dashboard是kubenetes原生支持的可视化界面。
 ### 3.13.1.2 kubectl的接入
 kubectl是kubenetes原生支持的命令行工具。
 
-**1. 适用范围：**当前集群。在某个集群下「导出kubeconfig文件」，用户通过kubectl可以操作该集群下所有原生空间资源。
+**1. 适用范围：**当前集群。在某个集群的某个原生空间下「导出kubeconfig文件」，系统会自动将该原生空间名写入config文件，这意味着操作这个原生空间时，所有的kubectl命令中无须带`-n xxxxx`的空间名信息。而操作同集群下其他原生空间时，就需要在所有的kubectl命令中携带`-n xxxxx`的空间名信息，来指定该命令所要操作的空间。
 
 **2. 集群kubernetes版本：**当前集群的kubernetes版本号。
+***
 
 ## 3.13.2 如何下载并安装kubectl工具
 ### 3.13.2.1 下载并kubectl工具
@@ -101,7 +101,7 @@ kubectl是kubenetes原生支持的命令行工具。
 
 **4）点击「导出kubeconfig文件」**
 
-!> kubeconfig文件中需要保存你的AK/SK秘钥用于鉴权登入
+!> kubeconfig文件中需要保存你的AK/SK秘钥用于鉴权登入<br>
 
 **5）点击「同意」，导出kubeconfig文件到本地**
 
@@ -137,15 +137,10 @@ kubectl是kubenetes原生支持的命令行工具。
 `kubectl cluster-info`
 ***
 
-## 3.13.4 其他说明
-**kubectl命令行说明：**https://kubernetes.io/docs/reference/kubectl/kubectl/
-
-
-
-## 3.13.5 原生模式下使用「HTTP 负载均衡」和 「TCP 负载均衡」
+## 3.13.4 如何使用「TCP 负载均衡」
 在原生模式下，可以使用下述的方式来创建简易模式下对应的负载均衡资源。
 
-### 3.13.5.1 TCP 负载均衡
+### 3.13.4.1 TCP 负载均衡
 
 创建下述 YAML 文件：
 
@@ -205,3 +200,221 @@ status:
 ```
 
 至此，一个 TCP 负载均衡已经创建完毕并可以对外提供服务。
+***
+
+## 3.13.5 快速实践 - 创建一个wordpress应用
+wordpress应用包含两类服务，MySQL数据库服务和Wordpress web服务。其中我们通过PersistentVolumeClaim(PVC)存储MySQL数据，通过Secret存储MySQL的root密码。因此，整个应用的创建流程分为以下4个步骤：<br>
+
+- 创建一个Secret用于存储MySQL密码
+- 创建一个PVC用于存储MySQL数据
+- 部署MySQL服务
+- 部署Wordpress服务
+
+### 3.13.5.1 创建一个Secret用于存储MySQL密码
+Secret是kubernetes用于存储隐秘性数据的对象，数据格式为key-value。
+
+**1）通过以下命令，创建一个key=“mysql-pass”，value=“root123”的secret对象**
+
+`kubectl create secret generic mysql-pass --from-literal=password=root123`
+
+**2）通过以下命令，验证Secret对象是否被创建成功**
+
+`kubectl get secrets`
+
+能够在列表中找到刚刚创建的Secret对象
+
+```
+NAME                      TYPE                                  DATA      AGE                                                                                                                                       
+mysql-pass                Opaque                                1         2d                                                                         ```
+### 3.13.5.2 创建一个PVC用于存储MySQL数据
+PVC是Pod用于挂载并持久化存储数据的对象。
+
+**1）在本地创建一个包含以下内容的YAML文件，命名为"ceph-volumes.yaml"**
+
+```ceph-volumes.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: ceph
+```
+
+**2）通过以下命令，基于"ceph-volumes.yaml"创建一个PVC**
+
+`kubectl create -f <YAML文件所在路径>/ceph-volumes.yaml`
+
+**3）通过以下命令，验证PVC对象是否被创建成功**
+
+`kubectl get pvc`
+
+能够在列表中找到刚刚创建的PVC对象
+
+```
+NAME             STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS   AGE                                    
+mysql-pv-claim   Bound     pvc-84adae57-93dd-11e8-9503-6c92bf12a558   20Gi       RWO           ceph           10s 
+```
+
+### 3.13.5.3 部署MySQL服务
+基于YAML文件部署MySQL服务的deployment对象。YAML文件中也包含了对之前secret和PVC两个对象的配置描述：<br>
+
+- 容器挂载PVC对象mysql-pv-claim到内部路径`/var/lib/mysql`<br>
+- 通过环境变量`MYSQL_ROOT_PASSWORD`设置MySQL密码，使用secret对象mysql-pass作为变量的值
+
+**1）在本地创建一个包含以下内容的YAML文件，命名为"mysql-deployment.yaml"**
+
+```mysql-deployment.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: wordpress
+    tier: mysql
+  clusterIP: None
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim```
+          
+**2）通过以下命令，基于"mysql-deployment.yaml"创建mysql deployment对象**
+
+`kubectl create -f <YAML文件所在路径>/mysql-deployment.yaml`
+
+**3）通过以下命令，验证MySQL的pod是否已经运行成功**
+
+`kubectl get pods`
+
+能够在列表中找到刚刚创建的MySQL pods
+
+```
+NAME                               READY     STATUS    RESTARTS   AGE                                                                                
+wordpress-mysql-2917821887-7k7jj   1/1       Running   0          2m       
+```
+
+### 3.13.5.4 部署Wordpress服务
+同样基于YAML文件部署Wordpress服务的deployment对象。YAML文件中包含了Wordpress服务连接MySQL数据库所需的环境变量描述：<br>
+
+- 通过环境变量`WORDPRSS_DB_HOST`，实现和MySQL的内网服务发现
+- 通过环境变量`WORDPRESS_DB_PASSWORD`，获取访问MySQL所需的密码
+
+**1）在本地创建一个包含以下内容的YAML文件，命名为"wordpress-deployment.yaml"**
+
+```wordpress-deployment.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: wordpress
+    tier: frontend
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+      containers:
+      - image: wordpress:4.8-apache
+        name: wordpress
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 80
+          name: wordpress
+```
+
+**2）通过以下命令，基于"wordpress-deployment.yaml"创建wordpress deployment对象**
+
+`kubectl create -f <YAML文件所在路径>/wordpress-deployment.yaml`
+
+**3）通过以下命令，验证wordpress的service是否已经运行成功**
+
+`kubectl get services wordpress`
+
+能够在列表中找到刚刚创建的wordpress service，以及mysql service
+
+```
+NAME              CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE                                                                                 
+wordpress         172.16.75.94   115.231.110.21   80:30625/TCP   1m                                                                                  
+wordpress-mysql   None           <none>           3306/TCP       14m  ```
+
+### 3.13.5.5 验证Wordpress应用是否部署成功
+
+复制wordpress service的`EXTERNAL-IP`到浏览器
+
+![](_figures/user-guide/origin-mode-wordpress.jpg)
+
+访问IP，能够显示如下的wordpress页面
+
+![](_figures/user-guide/origin-mode-wordpress-web.jpg)
+
+
+## 3.13.6 其他说明
+### 3.13.6 kubectl命令行
+参考kubernetes官网，https://kubernetes.io/docs/reference/kubectl/kubectl/
