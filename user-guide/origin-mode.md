@@ -507,6 +507,7 @@ users:#用户的认证信息
 `Switched to context "<context名>".`
 
 切到某个context，也意味着引用了这个context所在的config文件，那么用户就可以对这个config文件所在的集群进行操作了。
+***
 
 ## 3.13.7 其他说明
 ### 3.13.7.1 kubectl命令行
