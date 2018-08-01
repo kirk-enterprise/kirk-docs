@@ -413,8 +413,101 @@ wordpress-mysql   None           <none>           3306/TCP       14m  ```
 访问IP，能够显示如下的wordpress页面
 
 ![](_figures/user-guide/origin-mode-wordpress-web.jpg)
+***
 
+## 3.13.6 kubeconfig文件说明
+kubeconfig中描述了用户集群、用户空间、用户账户以及用户认证相关的信息。kubectl根据kubeconfig来选择集群并与集群的API服务器进行通信。
+默认情况下，kubectl使用的配置文件是`/.kube`目录下的config文件，用户也可以通过设置环境变量`KUBECONFIG`或者`--kubeconfig`指定其他的配置文件。
 
-## 3.13.6 其他说明
-### 3.13.6 kubectl命令行
+### 3.13.6.1 「导出kubeconfig文件」说明
+当用户登入c.qiniu.com控制台，并切换到某一个原生模式空间时，就会在左边栏为原生模式的TAB下看到这个控件。
+这个控件帮助用户能够导出一个系统自动生成的kubeconfig文件。文件中描述了导出文件所在空间的信息、该空间所在集群的信息、用户的AK/SK信息。
+```config
+apiVersion: v1
+clusters:#集群组，一组集群信息包含集群服务器API地址以及集群名
+- cluster:
+    server: https://authgate-xq.qiniu.com/v1/kube/
+  name: <cluster-name>
+contexts:#访问参数组，一组访问参数包含集群名、用户名、空间名
+- context:
+    cluster: <cluster-name>
+    user: <user-name>
+    namespace: <namespace>
+  name: <context-name>
+current-context: <context-name>
+kind: Config
+preferences: {}
+users:#用户的认证信息
+- name: <user-name>
+  user:
+    username: <AK>
+    password: <SK>
+```
+
+通过这个config文件，用户可以获得以下能力：
+- 直接操作导出文件所在空间：如果用户输入的kubectl命令行中不带`-n xxxx`空间信息，那么命令将会直接作用在该config文件所导出的空间。
+- 间接操作同一个集群下的其他原生空间：如果用户需要操作同一个集群下的其他原生空间，可以在kubectl命令行中携带`-n xxxx`信息，来指定该命令所要做用的空间。
+
+这些能力的适用范围只能是导出文件所在的集群，其他的集群并不能通过这个config文件进行操作。
+当然，如果要操作多个集群的资源，这个同样是可以办到的，请看下一节。
+
+### 3.13.6.2 如何实现在多个集群间进行切换操作
+当用户有多个集群的资源，这时候用户通过「导出kubeconfig文件」获得了多个集群的config，这时候该如何处理，能够使用kubectl命令实现集群间的切换呢？这里有两种方法，一种是通过`--kubeconfig`的方式来指定kubectl所引用的config文件，另一种是通过修改`KUBECONFIG`环境变量，使多个config文件能够被kubectl合并引用。
+
+#### 通过`--kubeconfig`的方式来指定kubectl所引用的config文件
+
+**1）先把所有的config文件通过改名，都放到指定目录`~/.kube`下，比如取名为config-xq，config-nb**
+
+**2）通过终端，进入`~/.kube`目录**
+
+**3）通过以下命令，对kubectl引用的config文件进行切换。切换需要同时指定config文件，以及config文件中所描述的某个context名(通常context名是导出config文件所在空间的名字，你也可以通过打开config文件查看)。**
+
+`kubectl config --kubeconfig=<config文件名> use-context <context名>`
+
+如果看到以下反馈，表示已经切换成功
+
+`Switched to context "<context名>".`
+
+通过这种方式，你就可以通过切换不同的config文件，来实现在多个集群之间的切换。
+
+#### 通过修改`KUBECONFIG`环境变量，使多个config文件能够被kubectl合并引用
+因为kubectl是根据context名来区分不同的context组，所以需要确保每个config文件中不存在同名的context。如果有同名，需要修改config文件。
+
+**1）修改环境变量`KUBECONFIG`**
+
+##### MacOS
+
+通过以下命令，添加多个config文件路径到环境变量中
+
+`export KUBECONFIG=$KUBECONFIG:<config文件1所在位置>/<config文件1>:<config文件2所在位置>/<config文件2>`
+
+##### Linux
+
+通过以下命令，添加多个config文件路径到环境变量中
+
+`export KUBECONFIG=$KUBECONFIG:<config文件1所在路径>/<config文件1>:<config文件2所在路径>/<config文件2>`
+
+##### Windows
+
+通过以下命令，添加多个config文件路径到环境变量中
+
+`$env:KUBECONFIG="<config文件1所在路径>/<config文件1>;<config文件2所在路径>/<config文件2>`
+
+**2) 通过以下命令，验证kubectl是否对多个config文件做了合并引用**
+
+`kubectl config view`
+
+能够查看到多个config文件内的cluster和context、users信息被整合了。
+
+**3）通过以下命令，对不同的context进行切换。**
+`kubectl confg <context名>`
+
+如果看到以下反馈，表示已经切换成功
+
+`Switched to context "<context名>".`
+
+切到某个context，也意味着引用了这个context所在的config文件，那么用户就可以对这个config文件所在的集群进行操作了。
+
+## 3.13.7 其他说明
+### 3.13.7.1 kubectl命令行
 参考kubernetes官网，https://kubernetes.io/docs/reference/kubectl/kubectl/
