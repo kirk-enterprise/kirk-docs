@@ -3,12 +3,16 @@
 
 !> 如果要使用原生模式，在创建空间时请选择空间类型为「原生模式」。
 
+原生模式概览如下：
+![](_figures/user-guide/native-mode-overview.jpg)
+
 **kubectl介绍说明：**https://kubernetes.io/docs/reference/kubectl/overview/<br>
 **dashboard介绍说明：**https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 
 ***
 
 ## 3.13.1 属性说明
+
 ### 3.13.1.1 dashboard的接入
 dashboard是kubenetes原生支持的可视化界面。
 
