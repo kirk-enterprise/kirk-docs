@@ -472,7 +472,7 @@ users:#用户的认证信息
 
 `Switched to context "<context名>".`
 
-通过这种方式，你就可以通过切换不同的config文件，来实现在多个集群之间的切换。
+通过这种方式，你就可以切换不同的config文件，来实现在多个集群之间的切换，但是每次命令都需要携带`--kubeconfig`参数。
 
 #### 通过修改`KUBECONFIG`环境变量，使多个config文件能够被kubectl合并引用
 因为kubectl是根据context名来区分不同的context组，所以需要确保每个config文件中不存在同名的context。如果有同名，需要修改config文件。
@@ -504,7 +504,7 @@ users:#用户的认证信息
 能够查看到多个config文件内的cluster和context、users信息被整合了。
 
 **3）通过以下命令，对不同的context进行切换。**
-`kubectl confg <context名>`
+`kubectl config <context名>`
 
 如果看到以下反馈，表示已经切换成功
 
