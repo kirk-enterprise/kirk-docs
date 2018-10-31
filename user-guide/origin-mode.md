@@ -141,7 +141,7 @@ kubectl是kubenetes原生支持的命令行工具。
 `kubectl cluster-info`
 ***
 
-## 3.13.4 如何使用「TCP 负载均衡」
+## 3.13.4 如何使用「TCP 负载均衡」 以及 「HTTP 负载均衡」
 在原生模式下，可以使用下述的方式来创建简易模式下对应的负载均衡资源。
 
 ### 3.13.4.1 TCP 负载均衡
@@ -204,6 +204,43 @@ status:
 ```
 
 至此，一个 TCP 负载均衡已经创建完毕并可以对外提供服务。
+
+***
+
+### 3.13.4.2 HTTP 负载均衡
+
+创建下述 YAML 文件：
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-name
+  annotations:
+    qiniu.com/ingress-type: alb
+spec:
+  rules:
+  - host: ""
+    http:
+      paths:
+      - backend:
+          serviceName: servicen-name
+          servicePort: 80
+        path: /
+```
+
+Spec 遵循 Ingress 的规格，但是其中需要注意的是
+`annotations` 内，必须包含 `qiniu.com/ingress-type: alb`
+如果 `spec.rules.host` 填空值 `""` 时，系统会自动为 Ingress 分配一个域名。
+创建成功后，
+ 
+ 
+通过执行
+```
+kubectl get ingress ingress-name
+```
+可以看到刚才创建的 Ingress 分配的随机域名，通过该随机域名即可访问到服务。
+
 ***
 
 ## 3.13.5 快速实践 - 创建一个wordpress应用
