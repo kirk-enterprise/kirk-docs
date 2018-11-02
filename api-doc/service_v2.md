@@ -368,7 +368,7 @@
 
 ### 请求
 
-`PUT` `/regions/<regionName>/v2/projects/<projectName>/microservices/<serviceName>/instanceNumber/<count>`
+`PUT` `/regions/<regionName>/v2/projects/<projectName>/microservices/<serviceName>/scale/<count>`
 
 ### 返回
 
