@@ -136,9 +136,9 @@ kubectl是kubenetes原生支持的命令行工具。
 `$env:KUBECONFIG="<kubeconfig文件所在位置>"`
 
 ### 3.13.3.3 验证是否成功接入集群
-输入以下命令，如果有URL被返回，则表示kubectl已经可以接入集群。
+输入以下命令，如果`Server Version`有显示 K8s 版本，则表示kubectl已经可以接入集群。
 
-`kubectl cluster-info`
+`kubectl version`
 ***
 
 ## 3.13.4 如何使用「TCP 负载均衡」 以及 「HTTP 负载均衡」
