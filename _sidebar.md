@@ -1,5 +1,5 @@
 * 快速开始
-  * [开始创建一个服务](quick-start/create-app.md)
+  * [基于镜像创建一个应用](quick-start/create-app.md)
   * [服务在集群内/集群外的访问](quick-start/cluster-app.md)
 * 用户指南
   * [账号注册](user-guide/registry.md)
