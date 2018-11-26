@@ -2,11 +2,11 @@
   * [基于镜像创建一个应用](quick-start/create-app.md)
   * [服务在集群内/集群外的访问](quick-start/cluster-app.md)
 * 用户指南
-  * [账号注册](user-guide/registry.md)
+  * [应用](user-guide/app.md)
   * [服务](user-guide/service.md)
   * [容器](user-guide/container.md)
   * [存储](user-guide/storage.md)
-  * [HTTP/HTTPS七层负载均衡](user-guide/loadbalance_7.md)
+  * [HTTP七层负载均衡](user-guide/loadbalance_7.md)
   * [TCP四层负载均衡](user-guide/loadbalance_4.md)
   * [域名管理](user-guide/domain.md)
   * [镜像中心](user-guide/image.md)
