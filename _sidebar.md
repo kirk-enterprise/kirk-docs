@@ -12,19 +12,9 @@
   * [镜像中心](user-guide/image.md)
   * [配置中心](user-guide/configmap.md)
   * [告警中心](user-guide/warning.md)
+  * [应用市场](user-guide/apps.md)
+  * [主机管理](user-guide/nodes.md)
+  * [账户中心](user-guide/account.md)
   * [监控 & 日志](user-guide/log-and-monitor.md)
-  * [空间管理](user-guide/namespace.md)
-  * [原生模式](user-guide/origin-mode.md)
-* API 文档
-  * [账户管理](api-doc/account.md)
-  * [服务接口](api-doc/service.md)
-  * [服务接口V2](api-doc/service_v2.md)
-  * [存储接口](api-doc/volume.md)
-  * [配置接口](api-doc/configmap.md)
-  * [HTTP/HTTPS 负载均衡接口](api-doc/alb.md)
-  * [TCP负载均衡](api-doc/tlb.md)
-  * [云盘接口](api-doc/volume.md)
 * 最佳实践
   * [开始一个Wordpress应用](best-practise/create-wordpress-app.md)
-* Q & A
-  * [常见问题](q-and-a/about-service.md)
