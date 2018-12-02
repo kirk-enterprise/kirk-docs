@@ -1,16 +1,7 @@
 # 开始一个Wordpress应用
 Wordpress应用包含两类服务，即MySQL数据库服务和Wordpress web服务。
 
-[1. 选择空间](#jump1)    
-[2. 创建服务](#jump2) 
-   
-- [2.1 创建MySQL服务](#jump21)    
-- [2.2 创建Wordpress web服务](#jump22)
-
-[3. 完成创建和访问应用](#jump3)
-
-## <span id="jump1">1. 选择空间</span>
-
+## 1. 选择空间
 选择当前服务需要被创建在哪个空间下。空间彼此之间资源隔离，如果服务有内网互访的需求，需要创建在一个空间下。操作如下：  
  
 **下拉控制台顶部的「空间」进行空间切换**
@@ -18,16 +9,25 @@ Wordpress应用包含两类服务，即MySQL数据库服务和Wordpress web服�
 ![下拉选择空间](_figures/quick-start/create-app-namespace.png)
 ***
 
-## <span id="jump2">2. 创建服务</span>
+## 2. 添加应用
+**操作如下：**
 
-**1）点击控制台左边栏的「服务」，切换至服务页面**
+1）点击控制台左边栏的「应用」，切换至应用页面
 
-**2）点击「创建服务」**    
+2）点击「添加应用」
 
-![](_figures/quick-start/create-app-5.png) 
+3）选择应用的创建方式，选择「基于镜像创建」
 
-### <span id="jump21">2.1 创建MySQL服务</span>
+4）填写「应用名」为`wordpress`
 
+!> **命名规范：**2-30位的小写字母、数字，开头为字母
+
+5）点击「添加服务」
+***
+
+## 3. 添加服务
+
+### 3.1 创建MySQL服务
 **操作如下：**
 
 1）填写「服务名」为 **"db"**
@@ -55,8 +55,7 @@ Wordpress应用包含两类服务，即MySQL数据库服务和Wordpress web服�
 
 9）点击「确认」，完成mysql服务创建   
 
-### <span id="jump22">2.2 创建Wordpress web服务</span>
-
+### 3.2 创建Wordpress web服务
 再次点击「创建服务」，添加第二个服务 Wordpress web服务。
 
 **操作如下：**
@@ -87,5 +86,5 @@ Wordpress应用包含两类服务，即MySQL数据库服务和Wordpress web服�
 9）点击「确认」，完成wordpress web服务创建  
 ***
 
-## <span id="jump3">3. 完成创建和访问应用</span>
+## 4. 完成创建和访问应用
 至此，一个wordpress应用就创建好了，可以通过wordpress web服务对外暴露的访问地址访问wordpress应用。
